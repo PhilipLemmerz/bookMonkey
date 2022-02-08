@@ -1,0 +1,42 @@
+<section *ngIf="book; else loading">
+  <h2>{{book.title}}</h2>
+  <h4>{{book.subtitle}}</h4>
+  <div class="basics">
+    <div>
+      <h5> Autoren</h5>
+      <p *ngFor="let author of book.authors"> {{author}}</p>
+    </div>
+    <div>
+      <h5> ISBN </h5>
+      <p> {{book.isbn}}</p>
+    </div>
+    <div>
+      <h5> Erschienen: </h5>
+      {{book.published}}
+    </div>
+    <div>
+      <h5>Rating</h5>
+      <div *ngIf="book.rating">
+        <i class="star outline icon" *ngFor="let star of tranformRatingToArray(book.rating)"></i>
+        <!-- man kann mit *ngFor nur durch einen Array iterieren -> wir haben aber nur eine Zahl (book.rating)
+        -> also wandelt die Funtktion transformRatingToArray() diese Zahl in eionen Array um -->
+      </div>
+    </div>
+  </div>
+  <h4>Beschreibung</h4>
+  {{book.description}}
+  <img class="ui image medium" *ngIf="book.thumbnails" [src]="book.thumbnails[0].url">
+
+  <button class="ui toggle button" routerLink="/bücher"> zurück </button>
+  <button class="ui inverted red button" (click)="deleteBook()">Buch löschen</button>
+</section>
+
+<!-- mit else bei *ngIf können wir nicht auf ein echtes DOM Element referenzioeren sondern nut auf das ng-template -->
+<ng-template #loading>
+  <div class="ui segment loadingAnimation">
+    <div class="ui active inverted dimmer">
+      <div class="ui text loader">Loading</div>
+    </div>
+    <p></p>
+  </div>
+</ng-template>

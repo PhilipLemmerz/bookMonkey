@@ -1,0 +1,25 @@
+.basics {
+  display: flex;
+  column-gap: 2rem;
+}
+
+.image {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+p {
+  white-space: pre-wrap;
+}
+
+.loadingAnimation {
+  padding-top: 20rem;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

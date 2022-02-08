@@ -1,0 +1,103 @@
+<section>
+  <h1> TypeScript </h1>
+
+  <p> learnings des TypeScript Kaptiel </p>
+
+  <hr>
+
+  <h3> unknown & any</h3>
+  <p> Typ :unkown kann nur nach typen-prüfung einer anderen Variable zugewiesen werden</p>
+
+  {{newOne}}
+
+  <hr>
+
+  <h3> Methodentypen</h3>
+  <p> Stellen sicher das Methoden den gewünschten Typ returnen </p>
+
+  {{returnOfFunction}}
+
+  <hr>
+
+  <h3> Schlüsselwort: extends </h3>
+  <p> Vererben von Eigenschaften und Methoden anderer Klassen </p>
+
+  {{name}}
+
+  <hr>
+
+  <h3> Lamda-Ausdrücke </h3>
+  <p> wir können um Ergbnisse zu returnen auch die Arrow Schreibweise nutzen </p>
+
+
+  {{lamdaReturn1}}
+  <br>
+  {{lamdaReturn2}}
+
+  <hr>
+
+  <h3> Spread Operator </h3>
+  <p>
+    mit dem spread Operator erstellen wir eine kopie eines Objektes & übertragen alle Propertys des alten Objekts
+    (ggf. können wir einzelne dann überschreiben)
+  </p>
+
+  <h4>Altes Objekt</h4>
+  {{myObject.name}}
+  {{myObject.year}}
+
+  <h4>neues Objekt mit spread & gändertem year</h4>
+  {{copy.name}}
+  {{copy.year}}
+
+  <hr>
+
+  <h4> 2 Typen angeben - Union Types </h4>
+  <p> varaible : string | number = 'darf vom typ string oder number sein' </p>
+
+  <hr>
+
+  <h4> Property Bindings </h4>
+  <p> reine Strings binden als attribut => src="https://bild.de"</p>
+  <p> Variablen bzw. Außdrücke binden als Property => [src] = "picUrl"</p>
+
+  <hr>
+
+  <h4> ngClass & ngStyle Syntax</h4>
+  <p> mit ngClass können wir MEHRERE KLASSEN in ABHÄNGKEIT von Variablenzuständen binden</p>
+  <p> siehe unten - die Varianle hasError ist false und die Variable isActive ist true</p>
+
+  <div [ngClass]="{active: isActive, error : hasError}">
+    <p> Klassen werden dynamisch gesezt je nach Variablenzustand von isActive und hasError</p>
+  </div>
+
+  <br>
+
+  <button (click)="this.isActive= !this.isActive; this.hasError = !this.hasError"> klassen tauschen</button>
+
+  <br><br>
+
+  <p> mit ngSyle funktiniert dies genauso</p>
+
+  <p [ngStyle] = "{color: myColor, border: '1px solid green' }">  mehrere Styles mit ngStyle  </p>
+
+  <hr>
+
+  <h4> @Input Namensänderung </h4>
+  <p> @Input('oldName') newName : string;</p>
+
+  <hr>
+
+  <h4> Eigene Typen entwickeln</h4>
+
+  <p> type ourType = 'on' | 'off' </p>
+
+  <p> Der Typ ourType dürfte jetzt nur die Strings 'on' oder 'of' annehmen</p>
+
+  <p> Achtung: die Typen Definition erfolgt über dem @Component Decorator </p>
+
+  <hr>
+
+
+
+</section>

@@ -6,8 +6,17 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
 </head>
 <body>
-  <pl-root></pl-root>
+  <pl-root>
+    <!-- wird angezeigt (Ladebalken) bis root component geladen ist -->
+    <div id="startLoading" class="ui segment">
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader large"> wird geladen </div>
+      </div>
+      <p></p>
+    </div>
+  </pl-root>
 </body>
 </html>

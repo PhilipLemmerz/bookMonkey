@@ -1,0 +1,29 @@
+<section>
+  <h1> HTTP-Client</h1>
+  <p> http Client nur einmal in der gesamten Anwendung einbinden - also in Service auslagern</p>
+
+  <hr>
+
+  <h4> Rückgabe-Werte </h4>
+  <h6> standardmäßig gibt der HTTP-Request nur den Body zurück</h6>
+  <p> Die Variable die wir mit der Antwort belegen wollen kann einen einfachen Typ : string, :number, :Book[] haben. Je nachdem was der Server eben sendet</p>
+  <h6> Komplette Antwort auslesen mit Header und allem</h6>
+  <p> Wenn wir nicht nur den Body wollen sondern die ganze Antort müssen wir das beim senden des requests angeben durch den Zusatz: observe: 'Response' (S.193) </p>
+  <p> Dann haben wir jedoch immer als Rückgabe den Typ:  HttpResponse</p>
+
+  <hr>
+
+  <h4> Paramter mitgeben beim Request</h4>
+  <p> Häufig möchten man Paramter mitgeben um bestimmte Antowrten zu erhalten man fragt z.B. an: exmaple.com/api/items?filter=Suchbegriff1</p>
+  <p> Dies löst in dem man ein params Objekt erstellt, das ein formObject enthält. dieses gibt man dem Request dann mit </p>
+  <p> Parameter können wir über die Mehtode set('paramter', 'neuerWert') ändern und über append('filter', 'neuerParamter') hinzufügen </p>
+  <p> S. 195</p>
+
+  <hr>
+
+  <h4> Rückgabewert kein JSON</h4>
+  <p> Standardmäßig erwarten wir ein JSON als Rückgabe </p>
+  <p> Erhalten wir kein JSON ODER GAR KEINEN WERT müssen wir den Typ manuell angeben mit: resonseType: 'text' oder 'blob'</p>
+
+
+</section>

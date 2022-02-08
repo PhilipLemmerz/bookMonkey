@@ -1,0 +1,25 @@
+.book {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  border-bottom:gray 1px solid;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.authors {
+  display: flex;
+}
+
+.gray {
+  color: gray;
+}
+
+h1 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  white-space: pre-wrap;
+}
