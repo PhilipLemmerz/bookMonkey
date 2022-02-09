@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, retry } from 'rxjs';
 import { Book } from './book';
 import { BookFactory } from './book-factory';
 import { BookRaw } from './book-raw';
@@ -10,24 +10,31 @@ import { BookRaw } from './book-raw';
 })
 export class BookStoreService {
 
-  private api = 'https://api4.angular-buch.com';
+  private api = 'https://api4.angular-buch.com/secure';
 
   constructor(private http: HttpClient) { }
-
 
   getAll(): Observable<Book[]> {
     return this.http.get<BookRaw[]>(`${this.api}/books`).pipe(
       map(bookRawArray => bookRawArray.map(
         book => BookFactory.transformBookRaw(book)
-      )
-      )
+      ))
     )
   }
 
   getSingle(isbn: string): Observable<Book> {
     return this.http.get<BookRaw>(`${this.api}/books/${isbn}`).pipe(
-      map(bookRaw => BookFactory.transformBookRaw(bookRaw))
+      retry(3),
+      map(bookRaw => BookFactory.transformBookRaw(bookRaw)),
     );
+  }
+
+  searchBook(term: string) {
+    return this.http.get<BookRaw[]>(`${this.api}/books/search/${term}`).pipe(
+      map(bookRawArray => bookRawArray.map(
+        book => BookFactory.transformBookRaw(book)
+      ))
+    )
   }
 
   remove(isbn: string): Observable<any> {
@@ -35,5 +42,6 @@ export class BookStoreService {
       { responseType: 'text' }
     );
   }
+
 }
 

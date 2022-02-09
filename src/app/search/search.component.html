@@ -1,0 +1,19 @@
+<div class="ui search">
+  <div class="ui icon input" [class.loading]="isLoading">
+    <input class="prompt" type="text" placeholder="Search..." #search (keyup)="entry$.next(search.value)"
+      (focus)="showResult=true" (blur)="removeResult()">
+    <i class="search icon"></i>
+  </div>
+  <div class="results"> </div>
+</div>
+<div *ngIf="showResult">
+  <div class="resultDiv" *ngFor="let book of bookResult; let i=index" [ngStyle]="{top : 70+i*120 +'px'}" routerLink="bücher/{{book.isbn}}">
+    <div>
+      <img [src]="book.thumbnails[0].url" class="searchImg">
+    </div>
+    <div>
+      {{book.title}}
+    </div>
+  </div>
+
+</div>

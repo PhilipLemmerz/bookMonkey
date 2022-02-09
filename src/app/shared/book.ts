@@ -5,7 +5,7 @@ export interface Book {
   published: Date;
   subtitle?: string; // ? heißt das das die angabe der property bei einem Objekt vom Typ Book optional ist
   rating?: number;
-  thumbnails?: Thumbnail[];
+  thumbnails: Thumbnail[];
   description?: string;
 }
 

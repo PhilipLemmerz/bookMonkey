@@ -1,1 +1,18 @@
+nav {
+  display:  flex;
+  justify-content: space-between;
+  padding: 0.5rem
+}
 
+.menuLinks {
+  display: flex;
+}
+
+.searchDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ui.menu:after {
+  content: none;
+}

@@ -12,8 +12,10 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
 import { ServicesComponent } from './learning/services/services.component';
 import { HomeComponent } from './home/home.component';
 import { HttpComponent } from './learning/http/http.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ObservableComponent } from './learning/observable/observable.component'
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ObservableComponent } from './learning/observable/observable.component';
+import { SearchComponent } from './search/search.component'
+import { TokenInterceptor } from './shared/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ObservableComponent } from './learning/observable/observable.component'
     ServicesComponent,
     HomeComponent,
     HttpComponent,
-    ObservableComponent
+    ObservableComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,13 @@ import { ObservableComponent } from './learning/observable/observable.component'
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

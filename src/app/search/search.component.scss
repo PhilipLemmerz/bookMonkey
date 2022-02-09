@@ -1,0 +1,18 @@
+.searchImg {
+  object-fit: contain;
+  height: 100px;
+}
+
+.resultDiv {
+  display: flex;
+  border-bottom: 1px dotted gray;
+  padding: 0.5rem;
+  column-gap: 0.5rem;
+  position: absolute;
+  width: 20vw;
+  background-color: rgba(245, 245, 245, 0.849);
+  right: 42px;
+
+}
+
+
