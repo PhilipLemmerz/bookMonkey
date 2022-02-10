@@ -1,0 +1,76 @@
+<form #createBookForm="ngForm" (ngSubmit)="submit()">
+  <div class="ui form">
+    <div class="two fields">
+      <div class="field" [class.error]="titleInput.invalid && titleInput.touched || formValid==false && titleInput.invalid ">
+        <label>Buchtitel</label>
+        <input type="text" name="title" placeholder="Angular lernen" [(ngModel)]="book.title" required #titleInput="ngModel">
+      </div>
+      <div class="field">
+        <label>Untertitel</label>
+        <input type="text" name="subtile" placeholder="das Praxishandbuch" [(ngModel)]="book.subtitle" >
+      </div>
+    </div>
+  </div>
+
+  <div class="ui form">
+    <div class="two fields">
+      <div class="field" [class.error]="authorInput.invalid && authorInput.touched || formValid==false && authorInput.invalid">
+        <label>Autor</label>
+        <input type="text" name="author" placeholder="Max Mustermann" [(ngModel)]="book.authors[0]" required #authorInput="ngModel" >
+      </div>
+      <div class="field" [class.error]="isbnInput.invalid && isbnInput.touched || formValid==false && isbnInput.invalid">
+        <label>Isbn Code</label>
+        <input type="text" name="isbn" placeholder="123456789" [(ngModel)]="book.isbn" minlength="13" maxlength="13" pattern="[0-9]+"  #isbnInput="ngModel" required>
+      </div>
+      <div *ngIf="isbnInput.invalid && isbnInput.touched" class="ui left pointing label">
+        Bitte gebe 13 Ziffern ein
+      </div>
+    </div>
+  </div>
+
+  <div class="ui form">
+    <div class="two fields">
+      <div class="field" [class.error]="dateInput.invalid && dateInput.touched || formValid==false && dateInput.invalid">
+        <label>Datum der Veröffentlichung</label>
+        <input type="date" useValueAsDate name="published" placeholder="22.02.1997" [(ngModel)]="book.published" #dateInput="ngModel" required>
+      </div>
+      <div class="field" [class.error]="ratingInput.invalid && ratingInput.touched || formValid==false && ratingInput.invalid">
+        <label>Bewertung</label>
+        <input type="text" name="rating" placeholder="3" [(ngModel)]="book.rating" maxlength="1" pattern="[0-5]" #ratingInput="ngModel">
+      </div>
+    </div>
+  </div>
+
+  <div class="ui form">
+    <p> Cover Bild hinzufügen:</p>
+    <div class="two fields">
+      <div class="field" [class.error]="urlInput.invalid && urlInput.touched || formValid==false && urlInput.invalid">
+        <label>URL (Bildlink)</label>
+        <input type="text" name="imgurl" placeholder="https://learnangular/titleimage.com" [(ngModel)]="book.thumbnails[0].url" #urlInput="ngModel" required>
+      </div>
+      <div class="field">
+        <label>Bildtitel </label>
+        <input type="text" name="imgtitle" placeholder="Coverbild Angular lernen" [(ngModel)]="book.thumbnails[0].title">
+      </div>
+    </div>
+  </div>
+
+  <div class="ui form">
+    <div class="field">
+      <label>Buchbeschreibung</label>
+      <textarea name="description" [(ngModel)]="book.description"> </textarea>
+    </div>
+  </div>
+
+  <br>
+
+  <button class="ui button" type="submit"> Buch hinzufügen </button>
+
+  <br>
+
+  <div *ngIf="!formValid" class="ui error message">
+    <div class="header">Ungültige Eingaben</div>
+    <p>Das Formular wurde nicht richtig ausgefüllt</p>
+  </div>
+
+</form>

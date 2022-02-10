@@ -15,7 +15,7 @@ export class BookStoreService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<BookRaw[]>(`${this.api}/books`).pipe(
+    return this.http.get<BookRaw[]>(`${this.api}/books`).pipe(  // 2x map -> da wir auf die einezlenen Book Objekte in dem Book Array mappen müssen.
       map(bookRawArray => bookRawArray.map(
         book => BookFactory.transformBookRaw(book)
       ))
@@ -24,8 +24,8 @@ export class BookStoreService {
 
   getSingle(isbn: string): Observable<Book> {
     return this.http.get<BookRaw>(`${this.api}/books/${isbn}`).pipe(
-      retry(3),
-      map(bookRaw => BookFactory.transformBookRaw(bookRaw)),
+      retry(3),                                                                 // wir versuchen 3x den Request bei einem Fehler
+      map(bookRaw => BookFactory.transformBookRaw(bookRaw)), // umwandlung mittels unserer Mehtode in der BookFactory published: string -> published :date
     );
   }
 
@@ -39,8 +39,12 @@ export class BookStoreService {
 
   remove(isbn: string): Observable<any> {
     return this.http.delete(`${this.api}/book/${isbn}`,
-      { responseType: 'text' }
+      { responseType: 'text' }        // Wichtig -> wir erhalten eine leere Antwort vom Server also kein JSON -> Deshalb müssen wir den Typ Text angeben sonst Fehler.
     );
+  }
+
+  create(book : Book) {
+    return this.http.post(`${this.api}/book`, book, {responseType: 'text'})
   }
 
 }

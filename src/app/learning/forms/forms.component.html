@@ -1,0 +1,31 @@
+<section>
+  <h1> Formulare - Template Driven </h1>
+
+  <h4> Grundaufbau & Meldung in Abhängikeit des Zustands </h4>
+
+  <form #ourForm="ngForm" (ngSubmit)="submit()">
+
+    <div class="ui input">
+      <input type="text" placeholder="Nachname" name="lastname" [(ngModel)]="form.lastName" #lastnameInput="ngModel">
+    </div>
+    <div class="ui left pointing label" *ngIf="lastnameInput.untouched">
+      Das input 'lastname' ist untouched
+    </div>
+    <br>
+    <div class="ui input">
+      <input required minLength="8" pattern=".*\d.*" type="password" placeholder="passwort" name="password"
+        [(ngModel)]="form.password" #passwordInput="ngModel"> <!-- pattern für muss eine Zahl enthalten-->
+    </div>
+    <div class="ui left pointing label" *ngIf="passwordInput.invalid && passwordInput.dirty">
+      Bitte geben Sie ein Passwort mit mind. 8 Zeichen & einer Zahl ein
+    </div>
+
+    <br>
+    <button type="submit" class="ui primary button">
+      senden
+    </button>
+
+  </form>
+
+
+</section>
