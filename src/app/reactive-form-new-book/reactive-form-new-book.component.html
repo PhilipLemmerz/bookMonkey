@@ -1,0 +1,89 @@
+<section>
+  <h1> Buch hinzufügen - Reactive Ansatz </h1>
+
+  <form [formGroup]="bookForm" (ngSubmit)="submitBookForm()">
+    <div class="ui form">
+      <div class="two fields">
+        <div class="field" [class.error]="errorCheck('title')">
+          <label>Buchtitel</label>
+          <input type="text" formControlName="title" placeholder="Angular lernen">
+        </div>
+        <div class="field">
+          <label>Untertitel</label>
+          <input type="text" formControlName="subtitle" placeholder="das Praxishandbuch">
+        </div>
+      </div>
+    </div>
+
+    <div class="ui form">
+      <div class="fields">
+        <div class="field" formArrayName="authors" *ngFor="let author of getAuthors(); index as i"
+          [class.error]="errorCheckAuthor(i)">
+          <label>Autor</label>
+          <input type="text" placeholder="Max Mustermann" formControlName="{{i}}">
+        </div>
+        <i class="plus icon" (click)="addAuthor()"></i>
+        <i class="minus icon" (click)="reduceAuthor()" *ngIf="showAuthorMinus"></i>
+      </div>
+    </div>
+    <div class="ui form">
+      <div class="fields">
+        <div class="field wide seven" [class.error]="errorCheck('isbn')">
+          <label>Isbn Code</label>
+          <input type="text" formControlName="isbn" placeholder="123456789">
+        </div>
+        <div *ngIf="bookForm.get('isbn').invalid && bookForm.get('isbn').touched " class="ui left pointing label">
+          Bitte gebe 13 Ziffern ein
+        </div>
+      </div>
+    </div>
+    <div class="ui form">
+      <div class="two fields">
+        <div class="field" [class.error]="errorCheck('published')">
+          <label>Datum der Veröffentlichung</label>
+          <input type="date" formControlName="published">
+        </div>
+        <div class="field" [class.error]="errorCheck('rating')">
+          <label>Bewertung</label>
+          <input type="number" placeholder="3" formControlName="rating">
+        </div>
+      </div>
+    </div>
+    <div class="ui form">
+      <p> Cover Bilder hinzufügen:</p>
+      <div class="two fields" formArrayName="thumbnails" *ngFor="let img of getThumbnails(); index as i">
+        <div class="imgGroup" formGroupName="{{i}}">
+          <div class="field" [class.error]="errorCheckThumbnails(i)">
+            <label>URL (Bildlink)</label>
+            <input type="text" formControlName="url" placeholder="https://learnangular/titleimage.com">
+          </div>
+          <div class="field">
+            <label>Bildtitel </label>
+            <input type="text" placeholder="Coverbild Angular lernen" formControlName="title">
+          </div>
+        </div>
+      </div>
+      <i class="plus icon" (click)="addImage()"></i>
+      <i class="minus icon" (click)="reduceImage()" *ngIf="showImageMinus"></i>
+    </div>
+
+    <div class="ui form">
+      <div class="field">
+        <label>Buchbeschreibung</label>
+        <textarea formControlName="description"> </textarea>
+      </div>
+    </div>
+
+    <br>
+
+    <button class="ui button" type="submit"> Buch hinzufügen </button>
+
+    <br>
+
+    <div *ngIf="invalidForm" class="ui error message">
+      <div class="header">Ungültige Eingaben</div>
+      <p>Das Formular wurde nicht richtig ausgefüllt</p>
+    </div>
+
+  </form>
+</section>

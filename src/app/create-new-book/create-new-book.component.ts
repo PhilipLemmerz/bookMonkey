@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -9,9 +10,19 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class CreateNewBookComponent implements OnInit {
 
-  constructor(private bs : BookStoreService) { }
+  constructor(private bs: BookStoreService, private activatedRoute: ActivatedRoute) { }
+
+  reactiveForm: boolean = false;
 
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe(   // eigener Code -> ließt url-Paramter aus und läd entweder reactive oder template form
+      param => {
+        if (param.get('form') == 'reactive') {
+          this.reactiveForm = true;
+        }
+      }
+    )
+
   }
 
   createNewBook(book: Book) {

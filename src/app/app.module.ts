@@ -16,10 +16,11 @@ import { ObservableComponent } from './learning/observable/observable.component'
 import { SearchComponent } from './search/search.component';
 import { TokenInterceptor } from './shared/token.interceptor';
 import { FormsComponent } from './learning/forms/forms.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateNewBookComponent } from './create-new-book/create-new-book.component';
 import { FormNewBookComponent } from './form-new-book/form-new-book.component';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
+import { ReactiveFormNewBookComponent } from './reactive-form-new-book/reactive-form-new-book.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
     SearchComponent,
     FormsComponent,
     CreateNewBookComponent,
-    FormNewBookComponent
+    FormNewBookComponent,
+    ReactiveFormNewBookComponent
   ],
   imports: [
     BrowserModule,
@@ -44,8 +46,8 @@ import { DateValueAccessorModule } from 'angular-date-value-accessor';
     SuiModule,
     HttpClientModule,
     FormsModule,
-    DateValueAccessorModule
-
+    DateValueAccessorModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

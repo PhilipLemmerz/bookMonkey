@@ -9,6 +9,7 @@ import { HttpComponent } from './learning/http/http.component';
 import { ObservableComponent } from './learning/observable/observable.component';
 import { ServicesComponent } from './learning/services/services.component';
 import { TypeScriptComponent } from './learning/type-script/type-script.component';
+import { ReactiveFormNewBookComponent } from './reactive-form-new-book/reactive-form-new-book.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'forms', component: FormsComponent},
   {path: 'admin', redirectTo: 'admin/erstellen', pathMatch:'full'},
   {path: 'admin/erstellen', component: CreateNewBookComponent},
+  {path: 'admin/erstellen/:form', component: CreateNewBookComponent},
   {path: 'bücher/:isbn', component: BookDetailComponent}
 
 ];

@@ -3,10 +3,11 @@
 
   <h4> Grundaufbau & Meldung in Abhängikeit des Zustands </h4>
 
-  <form #ourForm="ngForm" (ngSubmit)="submit()">
+  <form #ourTemplateForm="ngForm" (ngSubmit)="submitTemplateForm()">
 
     <div class="ui input">
-      <input type="text" placeholder="Nachname" name="lastname" [(ngModel)]="form.lastName" #lastnameInput="ngModel">
+      <input type="text" placeholder="Nachname" name="lastname" [(ngModel)]="templateForm.lastName"
+        #lastnameInput="ngModel">
     </div>
     <div class="ui left pointing label" *ngIf="lastnameInput.untouched">
       Das input 'lastname' ist untouched
@@ -14,7 +15,7 @@
     <br>
     <div class="ui input">
       <input required minLength="8" pattern=".*\d.*" type="password" placeholder="passwort" name="password"
-        [(ngModel)]="form.password" #passwordInput="ngModel"> <!-- pattern für muss eine Zahl enthalten-->
+        [(ngModel)]="templateForm.password" #passwordInput="ngModel"> <!-- pattern für muss eine Zahl enthalten-->
     </div>
     <div class="ui left pointing label" *ngIf="passwordInput.invalid && passwordInput.dirty">
       Bitte geben Sie ein Passwort mit mind. 8 Zeichen & einer Zahl ein
@@ -27,5 +28,53 @@
 
   </form>
 
+  <h2> Reactive Forms </h2>
 
+  <form [formGroup]="reactiveForm" (ngSubmit)="submitReactiveForm()">
+    <div class="ui form">
+      <div class="fields">
+        <div class="field">
+          <label>Benutzername</label>
+          <input type="text" formControlName="username">
+        </div>
+        <div *ngIf="reactiveForm.get('username').invalid && reactiveForm.get('username').touched" class="ui left pointing label">
+         Bitte gebe mindestens 5 Zeichen ein
+        </div>
+        <div class="field">
+          <label>Passwort</label>
+          <input type="text" formControlName="password">
+        </div>
+      </div>
+    </div>
+    <fieldset formGroupName="name">
+      <h4> Dein Name</h4>
+      <div class="ui form">
+        <div class="fields">
+          <div class="field">
+            <label>Vorname</label>
+            <input type="text" formControlName="firstname">
+          </div>
+          <div class="field">
+            <label>Nachname</label>
+            <input type="text" formControlName="lastname">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset formArrayName="email">
+      <h4> Deine Mail-Adressen</h4>
+      <div class="ui form" *ngFor="let field of reactiveForm.get('email').controls; index as i">
+        <div class="field three wide">
+          <label>Mailadresse</label>
+          <input type="email" formControlName="{{i}}">
+        </div>
+      </div>
+    </fieldset>
+
+    <button type="submit"class="ui button"> senden </button>
+  </form>
+
+  <h4> Alle Werte setzen mit setValue()</h4>
+  <button type="button" class="ui button primary" (click)="setAllValues()"> alle Werte setzen</button>
+  <button type="button" class="ui button primary" (click)="patchOneValue()"> einen Wert setzen</button>
 </section>

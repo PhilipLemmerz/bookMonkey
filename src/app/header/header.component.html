@@ -1,7 +1,14 @@
 <nav class="ui menu">
   <div class="menuLinks">
     <a class="item" routerLink="/bücher" routerLinkActive="active"> Bücher </a>
-    <a class="item" routerLink="admin" routerLinkActive="active"> Admin</a>
+    <div class="ui pointing dropdown link item" suiDropdown>
+      <span class="text"> Admin </span>
+      <i class="dropdown icon"></i>
+      <div class="menu" suiDropdownMenu>
+        <div class="item " routerLink="/admin">Buch anlegen - template-driven</div>
+        <div class="item" routerLink="/admin/erstellen/reactive"> Buch anlegen - reactive </div>
+      </div>
+    </div>
     <div class="ui pointing dropdown link item" suiDropdown>
       <span class="text">learning </span>
       <i class="dropdown icon"></i>

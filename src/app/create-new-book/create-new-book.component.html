@@ -1,6 +1,7 @@
 <section>
- <h1> Neues Buch hinzufügen: </h1>
 
- <pl-form-new-book (newBook)="createNewBook($event)"></pl-form-new-book>
+ <pl-form-new-book *ngIf="!reactiveForm" (newBook)="createNewBook($event)"></pl-form-new-book>
+
+ <pl-reactive-form-new-book *ngIf="reactiveForm" (newbook)="createNewBook($event)"> </pl-reactive-form-new-book>
 
 </section>

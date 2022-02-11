@@ -7,3 +7,9 @@ section {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
+fieldset {
+  border: none;
+  margin-top: 0.5rem;
+  padding-inline: 0;   // native gesetzter Style der fieldset nach links rückte und hier auf 0 gesetzt wird
+}
