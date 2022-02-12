@@ -47,5 +47,8 @@ export class BookStoreService {
     return this.http.post(`${this.api}/book`, book, {responseType: 'text'})
   }
 
+  update(book: Book) {
+    return this.http.put(`${this.api}/book/${book.isbn}`, book, {responseType: 'text'})
+  }
 }
 

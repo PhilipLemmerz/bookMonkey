@@ -1,31 +1,43 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
+import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Book } from '../shared/book';
+import { Book, Thumbnail } from '../shared/book';
 
 @Component({
   selector: 'pl-reactive-form-new-book',
   templateUrl: './reactive-form-new-book.component.html',
   styleUrls: ['./reactive-form-new-book.component.scss']
 })
-export class ReactiveFormNewBookComponent implements OnInit {
+export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
 
   constructor(private router: Router) { }
+  editing = false;
   showAuthorMinus = false
   showImageMinus = false;
   bookForm: any;
   invalidForm = false;
   @Output() newbook = new EventEmitter<Book>();
+  @Input() book: Book;
+
+  ngOnChanges() {
+    this.editing = true;                        // wird vor ngOnInit() aufgerufen aber nur wenn ein @Input() Binding gesetzt oder geändert wird.
+    this.initForm();
+    // initialisiert dass Form
+    this.setForm(this.book);
+  }
 
   ngOnInit(): void {
-    this.initForm();
+    if (!this.book) {                   // wenn kein book vorhanden ist (also wir nicht im edit-Modus sind) - dann soll das Form normal neu initialisiert werden
+      this.initForm();
+    }
+
   }
 
   initForm() {
     this.bookForm = new FormGroup({
       title: new FormControl('', Validators.required),
       subtitle: new FormControl(''),
-      isbn: new FormControl('', [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('[0-9]+')]),
+      isbn: new FormControl({ value: '', disabled: this.editing }, [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('[0-9]+')]),
       published: new FormControl('', Validators.required),
       rating: new FormControl('', [Validators.maxLength(1), Validators.pattern('[0-5]')]),
       description: new FormControl(''),
@@ -36,9 +48,29 @@ export class ReactiveFormNewBookComponent implements OnInit {
         })
       ]),
       authors: new FormArray([
-        new FormControl('', Validators.required)
+        new FormControl('', Validators.required),
       ])
     })
+  }
+
+  setForm(book: Book) {
+    this.bookForm.patchValue(book);
+    this.setAuthorsAndThumbnails(book.authors, book.thumbnails);
+  }
+
+  setAuthorsAndThumbnails(authors: String[], thumbnails: any[]) {
+    this.bookForm.get('authors').removeAt(0);
+    for (let author of authors) {
+      this.bookForm.get('authors').push(new FormControl(`${author}`))
+    }
+    this.bookForm.get('thumbnails').removeAt(0);
+    for (let thumbnail of thumbnails) {
+      this.bookForm.get('thumbnails').push(new FormGroup
+        ({
+          url: new FormControl(`${thumbnail.url}`),
+          title: new FormControl(`${thumbnail?.title}`)
+        }))
+    }
   }
 
   addAuthor() {
@@ -98,13 +130,15 @@ export class ReactiveFormNewBookComponent implements OnInit {
   }
 
   submitBookForm() {
+    const isbn = this.editing ? this.book.isbn : this.bookForm.get('isbn').value;
+    const newBook: Book = {
+      ...this.bookForm.value,
+      isbn: isbn
+    }
     if (this.bookForm.valid) {
       this.invalidForm = false;
-      this.newbook.emit(this.bookForm.value);
+      this.newbook.emit(newBook);
       this.bookForm.reset();
-      setTimeout(()=>{
-        this.router.navigateByUrl('/bücher');
-      },200);
     } else {
       this.invalidForm = true;
     }

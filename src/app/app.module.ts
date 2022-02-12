@@ -21,6 +21,7 @@ import { CreateNewBookComponent } from './create-new-book/create-new-book.compon
 import { FormNewBookComponent } from './form-new-book/form-new-book.component';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { ReactiveFormNewBookComponent } from './reactive-form-new-book/reactive-form-new-book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ReactiveFormNewBookComponent } from './reactive-form-new-book/reactive-
     FormsComponent,
     CreateNewBookComponent,
     FormNewBookComponent,
-    ReactiveFormNewBookComponent
+    ReactiveFormNewBookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

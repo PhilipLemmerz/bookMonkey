@@ -28,6 +28,7 @@
   <img class="ui image medium" *ngIf="book.thumbnails" [src]="book.thumbnails[0].url">
 
   <button class="ui toggle button" routerLink="/bücher"> zurück </button>
+  <button class="ui orange button" routerLink="/admin/edit/{{book.isbn}}">bearbeiten</button>
   <button class="ui inverted red button" (click)="deleteBook()">Buch löschen</button>
 
 </section>

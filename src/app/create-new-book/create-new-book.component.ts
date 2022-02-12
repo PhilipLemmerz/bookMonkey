@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -10,7 +10,7 @@ import { BookStoreService } from '../shared/book-store.service';
 })
 export class CreateNewBookComponent implements OnInit {
 
-  constructor(private bs: BookStoreService, private activatedRoute: ActivatedRoute) { }
+  constructor(private bs: BookStoreService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   reactiveForm: boolean = false;
 
@@ -27,7 +27,7 @@ export class CreateNewBookComponent implements OnInit {
 
   createNewBook(book: Book) {
     this.bs.create(book).subscribe(
-      book => console.log('buch hinzugefügt')
+      book => this.router.navigateByUrl('/bücher')
     )
   }
 
