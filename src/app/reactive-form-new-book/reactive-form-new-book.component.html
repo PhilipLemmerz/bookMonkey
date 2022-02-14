@@ -18,7 +18,7 @@
     <div class="ui form">
       <div class="fields">
         <div class="field" formArrayName="authors" *ngFor="let author of getAuthors(); index as i"
-          [class.error]="errorCheckAuthor(i)">
+          [class.error]="errorCheck('authors')">
           <label>Autor</label>
           <input type="text" placeholder="Max Mustermann" formControlName="{{i}}">
         </div>
@@ -32,8 +32,8 @@
           <label>Isbn Code</label>
           <input type="text" formControlName="isbn" placeholder="123456789">
         </div>
-        <div *ngIf="bookForm.get('isbn').invalid && bookForm.get('isbn').touched " class="ui left pointing label">
-          Bitte gebe 13 Ziffern ein
+        <div *ngIf="bookForm.get('isbn').invalid && bookForm.get('isbn').touched" class="ui left pointing label">
+         {{isbnError()}}
         </div>
       </div>
     </div>

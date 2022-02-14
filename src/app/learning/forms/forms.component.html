@@ -64,9 +64,31 @@
     <fieldset formArrayName="email">
       <h4> Deine Mail-Adressen</h4>
       <div class="ui form" *ngFor="let field of reactiveForm.get('email').controls; index as i">
-        <div class="field three wide">
+        <div class="field three wide" [class.error]="reactiveForm.get('email').invalid && reactiveForm.get('email').touched">
           <label>Mailadresse</label>
           <input type="email" formControlName="{{i}}">
+        </div>
+      </div>
+    </fieldset>
+
+    <p> Eigener PLZ-Validator </p>
+
+    <div class="ui input" [class.error]="reactiveForm.get('plz').invalid && reactiveForm.get('plz').touched ">
+      <input formControlName="plz" type="text" >
+    </div>
+
+    <fieldset formGroupName="newPassword">
+      <h4> Passwort eingeben</h4>
+      <div class="ui form">
+        <div class="fields">
+          <div class="field" [class.error]="reactiveForm.get('newPassword').invalid && reactiveForm.get('newPassword').get('passwordRepeat').touched">
+            <label>Passwort</label>
+            <input type="text" formControlName="passwordOne">
+          </div>
+          <div class="field" [class.error]="reactiveForm.get('newPassword').invalid && reactiveForm.get('newPassword').get('passwordRepeat').touched">
+            <label>Passwort wiederholen</label>
+            <input type="text" formControlName="passwordRepeat">
+          </div>
         </div>
       </div>
     </fieldset>

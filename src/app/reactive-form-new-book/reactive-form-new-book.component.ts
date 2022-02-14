@@ -2,6 +2,9 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angu
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Book, Thumbnail } from '../shared/book';
+import { BookExistsValidatorService } from '../shared/Validators/book-exists-validator.service';
+import { BookValidators } from '../shared/Validators/book-validators';
+
 
 @Component({
   selector: 'pl-reactive-form-new-book',
@@ -10,7 +13,7 @@ import { Book, Thumbnail } from '../shared/book';
 })
 export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private bookexistsvalidatornservice: BookExistsValidatorService) { }
   editing = false;
   showAuthorMinus = false
   showImageMinus = false;
@@ -30,14 +33,15 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
     if (!this.book) {                   // wenn kein book vorhanden ist (also wir nicht im edit-Modus sind) - dann soll das Form normal neu initialisiert werden
       this.initForm();
     }
-
   }
 
   initForm() {
     this.bookForm = new FormGroup({
       title: new FormControl('', Validators.required),
       subtitle: new FormControl(''),
-      isbn: new FormControl({ value: '', disabled: this.editing }, [Validators.required, Validators.minLength(13), Validators.maxLength(13), Validators.pattern('[0-9]+')]),
+      isbn: new FormControl({ value: '', disabled: this.editing },
+        [Validators.required, BookValidators.validateIsbn],
+        (control: AbstractControl) => this.bookexistsvalidatornservice.validate(control)), // Schreibweise für einen Asynchrone Validatoren !!!!
       published: new FormControl('', Validators.required),
       rating: new FormControl('', [Validators.maxLength(1), Validators.pattern('[0-5]')]),
       description: new FormControl(''),
@@ -48,8 +52,8 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
         })
       ]),
       authors: new FormArray([
-        new FormControl('', Validators.required),
-      ])
+        new FormControl(''),
+      ], BookValidators.validateAuthor)
     })
   }
 
@@ -74,7 +78,7 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
   }
 
   addAuthor() {
-    this.bookForm.get('authors').push(new FormControl('', Validators.required))
+    this.bookForm.get('authors').push(new FormControl(''))
     this.showAuthorMinus = true;
   }
 
@@ -115,18 +119,25 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
   }
 
   errorCheck(fieldname: string) {
-    const field = this.bookForm.get(fieldname)
+    const field = this.bookForm.get(fieldname);
     return field.invalid && field.touched || this.invalidForm && field.invalid
   }
 
   errorCheckThumbnails(index: number) {
-    const url = this.bookForm.get('thumbnails').get(`${index}`).get('url')
+    const url = this.bookForm.get('thumbnails').get(`${index}`).get('url');
     return url.invalid && url.touched || this.invalidForm && url.invalid
   }
 
-  errorCheckAuthor(index: number) {
-    const field = this.bookForm.get('authors').get(`${index}`)
-    return field.invalid && field.touched || this.invalidForm && field.invalid
+  isbnError() {
+    if (this.bookForm.get('isbn').errors?.required) {
+      return 'bite gebe eine 13-Stellige ISBN ein'
+    } else if (this.bookForm.get('isbn').errors?.format) {
+      return 'die eingegebene ISBN hat das flasche Format'
+    } else if (this.bookForm.get('isbn').errors?.exists) {
+      return 'Die eingegebene Isbn existiert bereits'
+    } else {
+      return 'es ist ein Fehler aufgetreten'
+    }
   }
 
   submitBookForm() {

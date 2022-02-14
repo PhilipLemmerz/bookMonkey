@@ -50,5 +50,9 @@ export class BookStoreService {
   update(book: Book) {
     return this.http.put(`${this.api}/book/${book.isbn}`, book, {responseType: 'text'})
   }
+
+  checkIsbn(isbn: String) {
+    return this.http.get(`${this.api}/book/${isbn}/check`)
+  }
 }
 

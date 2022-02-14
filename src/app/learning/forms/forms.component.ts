@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { AdressValidator } from 'src/app/shared/Validators/adress-validator';
+import { EmailValidators } from 'src/app/shared/Validators/email-validator';
+import { PasswordValidator } from 'src/app/shared/Validators/password';
 
 
 @Component({
@@ -37,14 +40,19 @@ export class FormsComponent implements OnInit {
         new FormControl(''),
         new FormControl(''),
         new FormControl('')
-      ])
-    })
+      ], EmailValidators.atLeastOneMail),
+      plz: new FormControl('', AdressValidator.plzFormat),
+      newPassword: new FormGroup({
+        passwordOne: new FormControl('', Validators.required),
+        passwordRepeat: new FormControl(''),
+      }, PasswordValidator.checkEqual),
+    }),
 
-    // reactive Forms - Reaktion auf Werte/ Zustandsänderungen
+      // reactive Forms - Reaktion auf Werte/ Zustandsänderungen
 
-    this.reactiveForm.get('username').valueChanges.subscribe(
-      (val: Observable<FormGroup>) =>  console.log(val)
-    )
+      this.reactiveForm.get('username').valueChanges.subscribe(
+        (val: Observable<FormGroup>) => console.log(val)
+      )
 
     this.reactiveForm.get('username').statusChanges.subscribe(
       (val: Observable<FormGroup>) => console.log(val)
