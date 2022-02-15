@@ -1,6 +1,6 @@
 <div class="book">
   <div *ngIf="book.thumbnails">
-    <img class="ui image small" [src]="book.thumbnails[0].url">
+    <img class="ui image small" plZoom [src]="book.thumbnails[0].url">
   </div>
   <div>
     <h3>{{book.title}}</h3>
@@ -11,7 +11,7 @@
       <p *ngFor="let author of book.authors; last as last"> {{author}} <span *ngIf="!last">, &nbsp; </span> </p>
       <!-- durch last as last können wir das <span> mit dem Komma bei allen Autoren AUßER DEM LETZTEN einfügen -->
     </div>
-    <p class="gray">{{book.isbn}}</p>
+    <p class="gray">{{book.isbn | isbn}}</p>
 
   </div>
 

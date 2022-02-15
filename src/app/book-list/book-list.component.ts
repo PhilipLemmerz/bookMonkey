@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
 
@@ -12,12 +13,11 @@ export class BookListComponent implements OnInit {
 
   constructor(private bs: BookStoreService) { }
 
-  books: Book[] = [];
+  books$:  Observable<Book[]>;
 
   ngOnInit(): void {
-    this.bs.getAll().subscribe(
-      res => this.books = res
-    )
+    this.books$ = this.bs.getAll();
+
   }
 
 

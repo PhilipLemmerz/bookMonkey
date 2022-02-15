@@ -5,9 +5,11 @@ import { BookListComponent } from './book-list/book-list.component';
 import { CreateNewBookComponent } from './create-new-book/create-new-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { HomeComponent } from './home/home.component';
+import { DirectivesComponent } from './learning/directives/directives.component';
 import { FormsComponent } from './learning/forms/forms.component';
 import { HttpComponent } from './learning/http/http.component';
 import { ObservableComponent } from './learning/observable/observable.component';
+import { PipesComponent } from './learning/pipes/pipes.component';
 import { ServicesComponent } from './learning/services/services.component';
 import { TypeScriptComponent } from './learning/type-script/type-script.component';
 
@@ -22,9 +24,10 @@ const routes: Routes = [
   {path: 'admin', redirectTo: 'admin/erstellen', pathMatch:'full'},
   {path: 'admin/erstellen', component: CreateNewBookComponent},
   {path: 'admin/edit/:isbn', component: EditBookComponent},
+  {path: 'pipes', component: PipesComponent},
+  {path: 'directives', component: DirectivesComponent},
   {path: 'admin/erstellen/:form', component: CreateNewBookComponent},
   {path: 'bücher/:isbn', component: BookDetailComponent}
-
 ];
 
 @NgModule({

@@ -37,9 +37,9 @@ export class FormsComponent implements OnInit {
         lastname: new FormControl('')
       }),
       email: new FormArray([
-        new FormControl(''),
-        new FormControl(''),
-        new FormControl('')
+        new FormControl('', Validators.email),
+        new FormControl('', Validators.email),
+        new FormControl('', Validators.email)
       ], EmailValidators.atLeastOneMail),
       plz: new FormControl('', AdressValidator.plzFormat),
       newPassword: new FormGroup({
@@ -76,6 +76,7 @@ export class FormsComponent implements OnInit {
     this.reactiveForm.setValue({
       username: 'Philip',
       password: 'password',
+      plz: '53177',
       name: {
         firstname: 'firstname',
         lastname: 'lastname',
@@ -84,7 +85,11 @@ export class FormsComponent implements OnInit {
         'one@mail.de',
         'two@mail.de',
         'three@mail.de'
-      ]
+      ],
+      newPassword: {
+        passwordOne: 'test123',
+        passwordRepeat: 'test12',
+      }
     })
   }
 

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Book } from '../shared/book';
 import { BookStoreService } from '../shared/book-store.service';
+import { DelayDirective } from '../shared/delay.directive';
+
 
 @Component({
   selector: 'pl-book-detail',
@@ -12,7 +15,7 @@ export class BookDetailComponent implements OnInit {
 
   constructor(private bs: BookStoreService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
-  book?: Book;
+  book$: Observable<Book>;
   isbn: string | null = ''
 
   ngOnInit(): void {
@@ -20,26 +23,19 @@ export class BookDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(
       param => {
         this.isbn = param.get('isbn');
-        this.subscribeBook();
+        this.book$ = this.bs.getSingle(this.isbn as string)
       }
     );
   }
 
-  subscribeBook() {
-    if (typeof this.isbn === 'string') {
-      this.bs.getSingle(this.isbn).subscribe(
-        res => this.book = res
-      );
-    }
-  }
 
   tranformRatingToArray(rating: number) {   // erstellung eines Arrays mit 5 Stellen aus einer Nummer.
     return new Array(rating);
   }
 
   deleteBook() {
-    if (this.book && confirm('Möchten Sie dieses Buch wirklich löschen?')) {
-      this.bs.remove(this.book.isbn).subscribe(
+    if (this.book$ && confirm('Möchten Sie dieses Buch wirklich löschen?')) {
+      this.bs.remove(this.isbn as string).subscribe(
         res => this.router.navigateByUrl('/bücher')
       );
     }

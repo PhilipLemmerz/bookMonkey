@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Inject, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SuiModule } from 'ng2-semantic-ui';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,17 @@ import { FormNewBookComponent } from './form-new-book/form-new-book.component';
 import { DateValueAccessorModule } from 'angular-date-value-accessor';
 import { ReactiveFormNewBookComponent } from './reactive-form-new-book/reactive-form-new-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import { PipesComponent } from './learning/pipes/pipes.component';
+import { MultiplicatePipe } from './learning/pipes/multiplication.pipe';
+import { IsbnPipe } from './shared/Pipes/isbn.pipe';
+import { DirectivesComponent } from './learning/directives/directives.component';
+import { OurDirective } from './learning/directives/our-directive.directive';
+import { TurntogreenDirective } from './learning/directives/turntogreen.directive';
+import { ZoomDirective } from './shared/zoom.directive';
+import { DelayDirective } from './shared/delay.directive';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +51,16 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     CreateNewBookComponent,
     FormNewBookComponent,
     ReactiveFormNewBookComponent,
-    EditBookComponent
+    EditBookComponent,
+    PipesComponent,
+    MultiplicatePipe,
+    IsbnPipe,
+    DirectivesComponent,
+    OurDirective,
+    TurntogreenDirective,
+    ZoomDirective,
+    DelayDirective
+
   ],
 
   imports: [
@@ -50,15 +70,27 @@ import { EditBookComponent } from './edit-book/edit-book.component';
     HttpClientModule,
     FormsModule,
     DateValueAccessorModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
   ],
   providers: [
+    {provide: LOCALE_ID, useValue: 'de'},
+
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,  // Klassenname des Intercepor
       multi: true // hierdruch können wir mehrere Interceporen verweden
-    }
+    },
+    {provide: DatePipe}
+
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(@Inject(LOCALE_ID) locale: string) {
+    registerLocaleData(localeDe)
+  }
+}
+
+

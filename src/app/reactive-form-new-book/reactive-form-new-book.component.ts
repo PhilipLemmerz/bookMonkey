@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Book, Thumbnail } from '../shared/book';
+import { Book } from '../shared/book';
 import { BookExistsValidatorService } from '../shared/Validators/book-exists-validator.service';
 import { BookValidators } from '../shared/Validators/book-validators';
 
@@ -15,7 +15,7 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
 
   constructor(private router: Router, private bookexistsvalidatornservice: BookExistsValidatorService) { }
   editing = false;
-  showAuthorMinus = false
+  showAuthorMinus = false;
   showImageMinus = false;
   bookForm: any;
   invalidForm = false;
@@ -41,7 +41,7 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
       subtitle: new FormControl(''),
       isbn: new FormControl({ value: '', disabled: this.editing },
         [Validators.required, BookValidators.validateIsbn],
-        (control: AbstractControl) => this.bookexistsvalidatornservice.validate(control)), // Schreibweise für einen Asynchrone Validatoren !!!!
+        (control: AbstractControl) => this.bookexistsvalidatornservice.validate(control)),    // Schreibweise für einen Asynchrone Validatoren !!!!
       published: new FormControl('', Validators.required),
       rating: new FormControl('', [Validators.maxLength(1), Validators.pattern('[0-5]')]),
       description: new FormControl(''),

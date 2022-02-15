@@ -1,21 +1,27 @@
 <section>
-  <pl-book-list-item *ngFor="let book of books" [book]="book" routerLink="{{book.isbn}}">
-  </pl-book-list-item>
+  <ng-container *ngIf="books$ | async as books; else loading">
+      <pl-book-list-item *ngFor="let book of books" [book]="book" routerLink="{{book.isbn}}">
+        </pl-book-list-item>
 
+      <div *ngIf="books && books.length==0">
+        <h2> Es wurden keine Bücher gefunden</h2>
+      </div>
+  </ng-container>
 
-  <div *ngIf="!books" class="ui segment loadingAnimation"> <!--Loading-Animation stylt den semantic ui Ladebalken-->
-    <div class="ui active inverted dimmer">
-      <div class="ui text loader">Loading</div>
+  <ng-template #loading>
+    <div class="ui segment loadingAnimation">
+      <div class="ui active inverted dimmer">
+        <div class="ui text loader">Loading</div>
+      </div>
     </div>
-  </div>
-
-  <div *ngIf="books && books.length==0">
-    <h2> Es wurden keine Bücher gefunden</h2>
-  </div>
+  </ng-template>
 
 
 
 </section>
+
+
+
 
 <!-- Das gesamte <pl-book-list-item> wird nun durch ngFor dubbliziert und das aktuelle Buch wird an die component gebindet und
 in der component book-list-item mit @Input() importiert  -->

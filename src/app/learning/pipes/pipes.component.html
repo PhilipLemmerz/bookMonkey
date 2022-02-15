@@ -1,0 +1,243 @@
+<section>
+  <h1> Pipes & Directives </h1>
+  <h2> Pipes: </h2>
+  <h4> Date Pipes</h4>
+  <p>Normales Format eines Date Objekts</p>
+  {{date}}
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ergebnis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"> | date </td>
+        <td data-label="Age">{{date | date}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'medium'</td>
+        <td data-label="Age">{{date | date:'medium'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'short'</td>
+        <td data-label="Age">{{date | date:'short'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'fullDate'</td>
+        <td data-label="Age">{{date | date:'fullDate'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'longDate'</td>
+        <td data-label="Age">{{date | date:'longDate'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'mediumDate'</td>
+        <td data-label="Age">{{date | date:'mediumDate'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| date:'shortTime'</td>
+        <td data-label="Age">{{date | date:'shortTime'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h4> Decimal Pipe - Number </h4>
+
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ergebnis value= 5.289 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"> | number </td>
+        <td data-label="Age">{{value | number}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| number:'1.2-2'</td>
+        <td data-label="Age">{{value | number:'1.2-2'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| number:'number:'4.4-5'</td>
+        <td data-label="Age">{{value | number:'4.4-5'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name">| number:'1.2-2':'en-US'</td>
+        <td data-label="Age">{{value | number:'1.2-2':'en-US'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h4> Percentage Pipe | percent </h4>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ergebnis value= 0.421252 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"> | pecent </td>
+        <td data-label="Age">{{valueP | percent}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueP | percent:'1.1'</td>
+        <td data-label="Age">{{valueP | percent:'1.1'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueP |'percent:'1.0-2'</td>
+        <td data-label="Age">{{valueP | percent:'1.0-2'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> 3.20 | percent </td>
+        <td data-label="Age">{{ 3.20 | percent}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h4> Currency Pipe | currency </h4>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ergebnis value= 3.14159 </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"> | currency </td>
+        <td data-label="Age">{{valueC | currency}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueC | currency:'EUR'</td>
+        <td data-label="Age">{{valueC | currency:'EUR'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueC | currency'USD':'code'</td>
+        <td data-label="Age">{{valueC | currency:'USD':'code'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueC| currency: 'EUR': 'symbol' </td>
+        <td data-label="Age">{{ valueC| currency: 'EUR': 'symbol'}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> valueC| currency: 'EUR': 'Euronen' </td>
+        <td data-label="Age">{{ valueC| currency: 'EUR': 'Euronen'}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+
+  <h4> Slice Pipe | slice </h4>
+  <p> aufbau | slice:start:end</p>
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Ergebnis</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Name"> 'HalloWelt'| slice:2 </td>
+        <td data-label="Age">{{'HalloWelt' | slice:2}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> 'HalloWelt'| slice:0:5</td>
+        <td data-label="Age">{{'HalloWelt'| slice:0:5}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> 'HalloWelt'| slice:4:-2 -> startet bei 4 und dann 2 zurück</td>
+        <td data-label="Age">{{'HalloWelt'| slice: 4: -2}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> 'HalloWelt'| slice:-100 </td>
+        <td data-label="Age">{{'HalloWelt'| slice: -100}}</td>
+      </tr>
+      <tr>
+        <td data-label="Name"> Geht Auch auf Arrays : ['Ferdinant', 'Walter', 'Peter', 'Frank'] | slice :0:2 </td>
+        <td data-label="Age">{{['Ferdinant', 'Walter', 'Peter', 'Frank'] | slice: 0:2}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <h4>KeyValuePipe | keyvalue </h4>
+  <p> Ein Objekt in einen Array umwandeln Objekt: {{book | json }}</p>
+
+  <p *ngFor="let obj of book | keyvalue">  {{obj.key}}:  {{obj.value}} </p>
+
+
+  <hr>
+
+  <h4> Json Pipe | json - Objekt sichbar machen! </h4>
+
+  <p> ohne | json book Objekt ausgeben</p>
+
+  {{book}}
+
+  <br>
+  <br>
+
+  <p> mit | json </p>
+
+  {{book | json}}
+
+
+  <h4> Async Pipe </h4>
+
+  <p>Unser BehaviorSubject hat erst den Wert 'hallo' dann nach einer sekunde 'welt' </p>
+
+  {{myBehaviorSubject$ | async}}
+
+  <br>
+  <br>
+
+  <p> Best practice um Observable-Werte im Template auszueben</p>
+  <p> |async subscribed automatisch</p>
+  <p> vorsicht bei http Ausgaben da bei jeder verwendung eine neuer Request ausgeführt wird</p>
+  <p> -> besser mit share() oder shareReplay() nutzen und die Pipe auf den geteilten Observable ausführen, dass keinen Request macht </p>
+
+  <hr>
+
+  <h2> Eigene Pipe erstellen </h2>
+
+  <p>Unsere Pipe multipliziert den Satrtwert mit der eingegeben Zahl </p>
+  <p> Startwert: 5</p>
+
+  <form>
+    <div class="ui input">
+      <input type="number" #numberInput value="0">
+    </div>
+    <button class=" ui button primary" (click)="setMultiplicator(numberInput.value)"> berechen </button>
+  </form>
+
+  <p *ngIf="multiplicator"> {{5 | multiplication: multiplicator}}</p>
+
+
+  <hr>
+
+
+
+
+
+
+
+
+
+</section>
