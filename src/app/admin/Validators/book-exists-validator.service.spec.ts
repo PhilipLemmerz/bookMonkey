@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BookExistsValidatorService } from './book-exists-validator.service';
+import { BookExistsValidatorService } from '../book-exists-validator.service';
 
 describe('BookExistsValidatorService', () => {
   let service: BookExistsValidatorService;

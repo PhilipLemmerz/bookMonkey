@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Book } from '../shared/book';
-import { BookExistsValidatorService } from '../shared/Validators/book-exists-validator.service';
-import { BookValidators } from '../shared/Validators/book-validators';
+import { Book } from '../../shared/book';
+import { BookExistsValidatorService } from '../book-exists-validator.service';
+import { BookValidators } from '../Validators/book-validators';
 
 
 @Component({

@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Book } from '../shared/book';
-import { BookStoreService } from '../shared/book-store.service';
-import { DelayDirective } from '../shared/delay.directive';
+import { Book } from '../../shared/book';
+import { BookStoreService } from '../../shared/book-store.service';
 
 
 @Component({

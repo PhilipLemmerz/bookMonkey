@@ -1,8 +1,8 @@
 import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Book } from '../shared/book';
-import { BookFactory } from '../shared/book-factory';
+import { Book } from '../../shared/book';
+import { BookFactory } from '../../shared/book-factory';
 
 @Component({
   selector: 'pl-form-new-book',

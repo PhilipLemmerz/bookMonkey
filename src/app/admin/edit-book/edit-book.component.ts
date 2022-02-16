@@ -2,8 +2,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs';
-import { Book } from '../shared/book';
-import { BookStoreService } from '../shared/book-store.service';
+import { Book } from '../../shared/book';
+import { BookStoreService } from '../../shared/book-store.service';
 
 @Component({
   selector: 'pl-edit-book',

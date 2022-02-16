@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { AdressValidator } from 'src/app/shared/Validators/adress-validator';
-import { EmailValidators } from 'src/app/shared/Validators/email-validator';
-import { PasswordValidator } from 'src/app/shared/Validators/password';
+import { AdressValidator } from '../Validators/adress-validator';
+import { EmailValidators } from '../Validators/email-validator';
+import { PasswordValidator } from '../Validators/password';
+
 
 
 @Component({
