@@ -15,6 +15,7 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
 
   constructor(private router: Router, private bookexistsvalidatornservice: BookExistsValidatorService) { }
   editing = false;
+  send = false; // für CanDeactivate Guard
   showAuthorMinus = false;
   showImageMinus = false;
   bookForm: any;
@@ -147,6 +148,7 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
       isbn: isbn
     }
     if (this.bookForm.valid) {
+      this.send = true;
       this.invalidForm = false;
       this.newbook.emit(newBook);
       this.bookForm.reset();

@@ -13,6 +13,7 @@ export class CreateNewBookComponent implements OnInit {
   constructor(private bs: BookStoreService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   reactiveForm: boolean = false;
+  send = false;
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(   // eigener Code -> ließt url-Paramter aus und läd entweder reactive oder template form
@@ -26,6 +27,7 @@ export class CreateNewBookComponent implements OnInit {
   }
 
   createNewBook(book: Book) {
+    this.send = true;
     this.bs.create(book).subscribe(
       book => this.router.navigateByUrl('/bücher')
     )

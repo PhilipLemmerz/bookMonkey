@@ -10,9 +10,6 @@ import { SearchComponent } from './search/search.component';
 import { TokenInterceptor } from './shared/token.interceptor';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localeDe from '@angular/common/locales/de';
-import { LearnModule } from './learn/learn.module';
-import { AdminModule } from './admin/admin.module';
-import { BooksModule } from './books/books.module';
 
 
 @NgModule({
@@ -27,12 +24,9 @@ import { BooksModule } from './books/books.module';
     BrowserModule,
     AppRoutingModule,
     SuiModule,
-    HttpClientModule,
-    LearnModule,
-    AdminModule,
-    BooksModule
-
+    HttpClientModule
   ],
+
   providers: [
     {provide: LOCALE_ID, useValue: 'de'},
 
