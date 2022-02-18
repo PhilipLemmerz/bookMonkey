@@ -11,7 +11,7 @@ export class CanDeactivateFormGuardGuard implements CanDeactivate<CreateNewBookC
     if (component.send) {
       return true
     } else {
-      return confirm('Möchtest du die Seite wirklich verlassen? - Deine Eingaben gehen verloren')
+      return confirm($localize`:@@canDeactivate:leaveConfirm\:Möchtest du die Seite wirklich verlassen? - Deine Eingaben gehen verloren`)
     }
   }
 }

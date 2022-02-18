@@ -1,25 +1,25 @@
 <nav class="ui menu">
   <div class="menuLinks">
-    <a class="item" routerLink="/bücher" routerLinkActive="active"> Bücher </a>
+    <a class="item" routerLink="/bücher" routerLinkActive="active" i18n="@@nav:books"> Bücher </a>
     <div class="ui pointing dropdown link item" suiDropdown>
-      <span class="text"> Admin </span>
+      <span class="text" i18n="@@nav:admin"> Admin </span>
       <i class="dropdown icon"></i>
       <div class="menu" suiDropdownMenu>
-        <div class="item " routerLink="/admin">Buch anlegen - template-driven</div>
-        <div class="item" routerLink="/admin/erstellen/reactive"> Buch anlegen - reactive </div>
+        <div class="item " routerLink="/admin" i18n="@@nav:templateForm">Buch anlegen - template-driven</div>
+        <div class="item" routerLink="/admin/erstellen/reactive" i18n="@@nav:reactiveForm"> Buch anlegen - reactive </div>
       </div>
     </div>
     <div class="ui pointing dropdown link item" suiDropdown>
-      <span class="text">learning </span>
+      <span class="text"i18n="@@nav:learn">learning </span>
       <i class="dropdown icon"></i>
       <div class="menu" suiDropdownMenu>
-        <div class="item " routerLink="learn/typeScript">typeScript</div>
-        <div class="item" routerLink="learn/services">services</div>
-        <div class="item" routerLink="learn/http">http</div>
-        <div class="item" routerLink="learn/observables"> observables</div>
-        <div class="item" routerLink="learn/forms"> forms</div>
-        <div class="item" routerLink="learn/pipes"> pipes </div>
-        <div class="item" routerLink="learn/directives"> directives</div>
+        <div class="item " routerLink="learn/typeScript"i18n="@@nav:typeScript">typeScript</div>
+        <div class="item" routerLink="learn/services" i18n="@@nav:services">services</div>
+        <div class="item" routerLink="learn/http" i18n="@@nav:http">http</div>
+        <div class="item" routerLink="learn/observables" i18n="@@nav:observables"> observables</div>
+        <div class="item" routerLink="learn/forms" i18n="@@nav:forms"> forms</div>
+        <div class="item" routerLink="learn/pipes"i18n="@@nav:pipes"> pipes </div>
+        <div class="item" routerLink="learn/directives" i18n="@@nav:directives"> directives</div>
       </div>
     </div>
   </div>

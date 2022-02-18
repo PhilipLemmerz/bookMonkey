@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Book } from 'src/app/shared/book';
+import { Component, Input, OnInit } from '@angular/core';
+
 
 
 @Component({

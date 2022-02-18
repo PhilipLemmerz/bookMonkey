@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE messagebundle [
+<!ELEMENT messagebundle (msg)*>
+<!ATTLIST messagebundle class CDATA #IMPLIED>
+
+<!ELEMENT msg (#PCDATA|ph|source)*>
+<!ATTLIST msg id CDATA #IMPLIED>
+<!ATTLIST msg seq CDATA #IMPLIED>
+<!ATTLIST msg name CDATA #IMPLIED>
+<!ATTLIST msg desc CDATA #IMPLIED>
+<!ATTLIST msg meaning CDATA #IMPLIED>
+<!ATTLIST msg obsolete (obsolete) #IMPLIED>
+<!ATTLIST msg xml:space (default|preserve) "default">
+<!ATTLIST msg is_hidden CDATA #IMPLIED>
+
+<!ELEMENT source (#PCDATA)>
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<messagebundle>
+  <msg id="form:headline"><source>src/app/admin/form-new-book/form-new-book.component.html:1</source> Neues Buch hinzufügen - Template Driven </msg>
+  <msg id="form:booktitle"><source>src/app/admin/form-new-book/form-new-book.component.html:7</source>Buchtitel</msg>
+  <msg id="1536419805421614141" desc="form:booktitleplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:8</source>Angular lernen</msg>
+  <msg id="form:subtitle"><source>src/app/admin/form-new-book/form-new-book.component.html:11</source>Untertitel</msg>
+  <msg id="form:subtitleplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:12</source>das Praxishandbuch</msg>
+  <msg id="form:author"><source>src/app/admin/form-new-book/form-new-book.component.html:20</source>Autor</msg>
+  <msg id="form:authorplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:21</source>Max Mustermann</msg>
+  <msg id="form:isbn"><source>src/app/admin/form-new-book/form-new-book.component.html:24</source>Isbn Code</msg>
+  <msg id="form:isbnplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:25</source>123456789</msg>
+  <msg id="form:infoIsbn"><source>src/app/admin/form-new-book/form-new-book.component.html:27,30</source> Bitte gebe 13 Ziffern ein </msg>
+  <msg id="form:published"><source>src/app/admin/form-new-book/form-new-book.component.html:36</source>Datum der Veröffentlichung</msg>
+  <msg id="form:bublishedplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:37</source>22.02.1997</msg>
+  <msg id="form:rating"><source>src/app/admin/form-new-book/form-new-book.component.html:40</source>Bewertung</msg>
+  <msg id="form:ratingplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:41</source>3</msg>
+  <msg id="form:addCoverImg"><source>src/app/admin/form-new-book/form-new-book.component.html:47</source> Cover Bild hinzufügen:</msg>
+  <msg id="form:imgurl"><source>src/app/admin/form-new-book/form-new-book.component.html:50</source>URL (Bildlink)</msg>
+  <msg id="form:imgurlplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:51</source>https://learnangular/titleimage.com</msg>
+  <msg id="form:imgTitle"><source>src/app/admin/form-new-book/form-new-book.component.html:54</source>Bildtitel </msg>
+  <msg id="form:imgTitleplaceholder"><source>src/app/admin/form-new-book/form-new-book.component.html:55</source>Coverbild Angular lernen</msg>
+  <msg id="form:description"><source>src/app/admin/form-new-book/form-new-book.component.html:62</source>Buchbeschreibung</msg>
+  <msg id="form:buttonAdd"><source>src/app/admin/form-new-book/form-new-book.component.html:69</source> Buch hinzufügen </msg>
+  <msg id="form:unvalidEntry"><source>src/app/admin/form-new-book/form-new-book.component.html:74</source>Ungültige Eingaben</msg>
+  <msg id="form:formNotValid"><source>src/app/admin/form-new-book/form-new-book.component.html:75</source>Das Formular wurde nicht richtig ausgefüllt</msg>
+  <msg id="formreactive:headline"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:1</source> Buch hinzufügen - Reactive Ansatz </msg>
+  <msg id="formreactive:BookTitle"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:7</source>Buchtitel</msg>
+  <msg id="formreactive:BookTitleplaceholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:8</source>Angular lernen</msg>
+  <msg id="formreactive:subtitle"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:11</source>Untertitel</msg>
+  <msg id="formreactive:subtitleplaceholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:12</source>das Praxishandbuch</msg>
+  <msg id="formreactive:auhtor"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:21</source>Autor</msg>
+  <msg id="formreactive:authorplaceholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:22</source>Max Mustermann</msg>
+  <msg id="formreactive:isbn"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:31</source>Isbn Code</msg>
+  <msg id="formreactive:isbnplaceholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:32</source>123456789</msg>
+  <msg id="formreactive:published"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:42</source>Datum der Veröffentlichung</msg>
+  <msg id="formreactive:rating"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:46</source>Bewertung</msg>
+  <msg id="formreactive:coverIngTitle"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:52</source> Cover Bilder hinzufügen:</msg>
+  <msg id="formreactive:imgurl"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:56</source>URL (Bildlink)</msg>
+  <msg id="formreactive:imgurlplaceholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:57</source>https://learnangular/titleimage.com</msg>
+  <msg id="formreactive:imgtitle"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:60</source>Bildtitel </msg>
+  <msg id="formreactive:placeholder"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:61</source>Coverbild Angular lernen</msg>
+  <msg id="formreactive:description"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:71</source>Buchbeschreibung</msg>
+  <msg id="formreactive:buttonAdd"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:78</source> Buch hinzufügen </msg>
+  <msg id="formreactive:unvalidForm"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:83</source>Ungültige Eingaben</msg>
+  <msg id="formreactive:unvalidFormparagraph"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.html:84</source>Das Formular wurde nicht richtig ausgefüllt</msg>
+  <msg id="error"><source>src/app/admin/reactive-form-new-book/reactive-form-new-book.component.ts:133</source>noisbn: bite gebe eine 13-Stellige ISBN ein</msg>
+  <msg id="guardCanActivate"><source>src/app/can-activate-admin-guard.guard.ts:16</source>Atention:Achtung: Sensibler Bereich - Bitte erstelle und bearbeite Bücher gewissenhaft</msg>
+  <msg id="canDeactivate"><source>src/app/can-deactivate-form-guard.guard.ts:13</source>leaveConfirm:Möchtest du die Seite wirklich verlassen? - Deine Eingaben gehen verloren</msg>
+  <msg id="nav:books"><source>src/app/header/header.component.html:2</source> Bücher </msg>
+  <msg id="nav:admin"><source>src/app/header/header.component.html:4</source> Admin </msg>
+  <msg id="nav:templateForm"><source>src/app/header/header.component.html:7</source>Buch anlegen - template-driven</msg>
+  <msg id="nav:reactiveForm"><source>src/app/header/header.component.html:8</source> Buch anlegen - reactive </msg>
+  <msg id="nav:learn"><source>src/app/header/header.component.html:12</source>learning </msg>
+  <msg id="nav:typeScript"><source>src/app/header/header.component.html:15</source>typeScript</msg>
+  <msg id="nav:services"><source>src/app/header/header.component.html:16</source>services</msg>
+  <msg id="nav:http"><source>src/app/header/header.component.html:17</source>http</msg>
+  <msg id="nav:observables"><source>src/app/header/header.component.html:18</source> observables</msg>
+  <msg id="nav:forms"><source>src/app/header/header.component.html:19</source> forms</msg>
+  <msg id="nav:pipes"><source>src/app/header/header.component.html:20</source> pipes </msg>
+  <msg id="nav:directives"><source>src/app/header/header.component.html:21</source> directives</msg>
+  <msg id="Home:headline"><source>src/app/home/home.component.html:1</source> Home</msg>
+  <msg id="home:button"><source>src/app/home/home.component.html:3</source>Bücherliste ansehen <ph name="START_ITALIC_TEXT"/><ph name="CLOSE_ITALIC_TEXT"/></msg>
+  <msg id="learnDirectives:headline"><source>src/app/learn/directives/directives.component.html:1</source> Direktiven </msg>
+  <msg id="learnDirectives:subtitle"><source>src/app/learn/directives/directives.component.html:2</source> andere Bindings in Directive holen </msg>
+  <msg id="learnDirectives:firstp"><source>src/app/learn/directives/directives.component.html:3,5</source> Auf diesem p-Element sitzt unser Directive und greift auf eine Variable aus der component zu </msg>
+  <msg id="learnDirectives:hostbindingtitle"><source>src/app/learn/directives/directives.component.html:8</source> @HostBinding </msg>
+  <msg id="learnDirectives:hostbindingdescription"><source>src/app/learn/directives/directives.component.html:9</source> Propertys z.B Klassen auf dem Host-Element setzen </msg>
+  <msg id="learnDirectives:hostbindingtest"><source>src/app/learn/directives/directives.component.html:11</source> Sobald Klasse active über @HostBinding gesetzt wurde wird der Text rot </msg>
+  <msg id="learnDirectives:elementreftitle"><source>src/app/learn/directives/directives.component.html:13</source> Element Ref </msg>
+  <msg id="learnDirectives:elementrefparagraph"><source>src/app/learn/directives/directives.component.html:14</source> natitv und direkt DOM-Elemente verändern </msg>
+  <msg id="learnDirectives:directivegreen"><source>src/app/learn/directives/directives.component.html:16</source> directive macht den Text nach 3 Sekunden grün durch ElementRef </msg>
+  <msg id="learnDirectives:hostlistener"><source>src/app/learn/directives/directives.component.html:20</source> @HostListener </msg>
+  <msg id="learnDirectives:hostlistenerparagraph"><source>src/app/learn/directives/directives.component.html:21,23</source> Immer wenn auf dem Host Element ein Event passiert z.B. Klick dann führt die direktive die hinterlegte Funktion aus</msg>
+  <msg id="learnDirectives:hostlistenersecondparagraph"><source>src/app/learn/directives/directives.component.html:24,26</source> Bei Klick auf den Button wird die Schrift des Buttons blau und Hintergrund gelb -&gt; style Setzung erfolgt in der Directive für das HostElement </msg>
+  <msg id="learnDirectives:buttonone"><source>src/app/learn/directives/directives.component.html:27</source> klick mich </msg>
+  <msg id="learnDirectives:complexdirective"><source>src/app/learn/directives/directives.component.html:31</source> Komplexes Direktiven Beispiel </msg>
+  <msg id="learnDirectives:complexdirectivedescription"><source>src/app/learn/directives/directives.component.html:32</source> Wenn wir mit der Maus über das Viereck fahren, wir es grün</msg>
+  <msg id="learnForms:headline"><source>src/app/learn/forms/forms.component.html:1</source> Formulare - Template Driven </msg>
+  <msg id="learnForms:subtitle"><source>src/app/learn/forms/forms.component.html:3</source> Grundaufbau &amp; Meldung in Abhängikeit des Zustands </msg>
+  <msg id="learnForms:lastname"><source>src/app/learn/forms/forms.component.html:8</source>Nachname</msg>
+  <msg id="learnForms:firsthint"><source>src/app/learn/forms/forms.component.html:11,14</source> Das input &apos;lastname&apos; ist untouched </msg>
+  <msg id="learnForms:passwordplaceholder"><source>src/app/learn/forms/forms.component.html:16</source>passwort</msg>
+  <msg id="learnForms:hinttwo"><source>src/app/learn/forms/forms.component.html:19,22</source> Bitte geben Sie ein Passwort mit mind. 8 Zeichen &amp; einer Zahl ein </msg>
+  <msg id="learnForms:sendone"><source>src/app/learn/forms/forms.component.html:24,27</source> senden </msg>
+  <msg id="learnforms:reactiveTitle"><source>src/app/learn/forms/forms.component.html:30</source> Reactive Forms </msg>
+  <msg id="learnForms:reactiveName"><source>src/app/learn/forms/forms.component.html:36</source>Benutzername</msg>
+  <msg id="learnForms:reactiveHintOne"><source>src/app/learn/forms/forms.component.html:39,42</source> Bitte gebe mindestens 5 Zeichen ein </msg>
+  <msg id="learnForms:reactivePassword"><source>src/app/learn/forms/forms.component.html:43</source>Passwort</msg>
+  <msg id="learnForms:reactiveNameInput"><source>src/app/learn/forms/forms.component.html:49</source> Dein Name</msg>
+  <msg id="learnForms:reactiveFirstName"><source>src/app/learn/forms/forms.component.html:53</source>Vorname</msg>
+  <msg id="learnForms:reactiveLastname"><source>src/app/learn/forms/forms.component.html:57</source>Nachname</msg>
+  <msg id="learnForms:reactiveemail"><source>src/app/learn/forms/forms.component.html:64</source> Deine Mail-Adressen</msg>
+  <msg id="learnForms:reactiveMailInput"><source>src/app/learn/forms/forms.component.html:67</source>Mailadresse</msg>
+  <msg id="learnForms:reactivePlZValidator"><source>src/app/learn/forms/forms.component.html:73</source> Eigener PLZ-Validator </msg>
+  <msg id="learnForms:reactiveentryPassword"><source>src/app/learn/forms/forms.component.html:80</source> Passwort eingeben</msg>
+  <msg id="learnForms:reactivePasswordInputValidator"><source>src/app/learn/forms/forms.component.html:84</source>Passwort</msg>
+  <msg id="learnForms:reactivePasswordValidatorSecond"><source>src/app/learn/forms/forms.component.html:88</source>Passwort wiederholen</msg>
+  <msg id="learnForms:reactivesend"><source>src/app/learn/forms/forms.component.html:95</source> senden </msg>
+  <msg id="learnForms:reactiveSetValueTitle"><source>src/app/learn/forms/forms.component.html:98</source> Alle Werte setzen mit setValue()</msg>
+  <msg id="learnForms:reativesetAllValues"><source>src/app/learn/forms/forms.component.html:99</source> alle Werte setzen</msg>
+  <msg id="learnForms:reactivepatchOneValue"><source>src/app/learn/forms/forms.component.html:100</source> einen Wert setzen</msg>
+  <msg id="learnhttp:headline"><source>src/app/learn/http/http.component.html:1</source> HTTP-Client</msg>
+  <msg id="learnhttp:subtitle"><source>src/app/learn/http/http.component.html:2</source> http Client nur einmal in der gesamten Anwendung einbinden - also in Service auslagern</msg>
+  <msg id="learnhttp:callBackValues"><source>src/app/learn/http/http.component.html:6</source> Rückgabe-Werte </msg>
+  <msg id="learnhttp:standardbody"><source>src/app/learn/http/http.component.html:7</source> standardmäßig gibt der HTTP-Request nur den Body zurück</msg>
+  <msg id="learnhttp:typeResponse"><source>src/app/learn/http/http.component.html:8</source> Die Variable die wir mit der Antwort belegen wollen kann einen einfachen Typ : string, :number, :Book[] haben. Je nachdem was der Server eben sendet</msg>
+  <msg id="learnhttp:completeResponse"><source>src/app/learn/http/http.component.html:9</source> Komplette Antwort auslesen mit Header und allem</msg>
+  <msg id="learnhttp:sendforCompleteResponse"><source>src/app/learn/http/http.component.html:10</source> Wenn wir nicht nur den Body wollen sondern die ganze Antort müssen wir das beim senden des requests angeben durch den Zusatz: observe: &apos;Response&apos; (S.193) </msg>
+  <msg id="learnhttp:typetheSame"><source>src/app/learn/http/http.component.html:11</source> Dann haben wir jedoch immer als Rückgabe den Typ: HttpResponse</msg>
+  <msg id="learnhttp:paramter"><source>src/app/learn/http/http.component.html:15</source> Paramter mitgeben beim Request</msg>
+  <msg id="learnhttp:parameterParagraph"><source>src/app/learn/http/http.component.html:16</source> Häufig möchten man Paramter mitgeben um bestimmte Antowrten zu erhalten man fragt z.B. an: exmaple.com/api/items?filter=Suchbegriff1</msg>
+  <msg id="learnhttp:paramsObject"><source>src/app/learn/http/http.component.html:17</source> Dies löst in dem man ein params Objekt erstellt, das ein formObject enthält. dieses gibt man dem Request dann mit </msg>
+  <msg id="learnhttp:setParameter"><source>src/app/learn/http/http.component.html:18</source> Parameter können wir über die Mehtode set(&apos;paramter&apos;, &apos;neuerWert&apos;) ändern und über append(&apos;filter&apos;, &apos;neuerParamter&apos;) hinzufügen </msg>
+  <msg id="learnhttp:wichPage"><source>src/app/learn/http/http.component.html:19</source> S. 195</msg>
+  <msg id="learnhttp:callbackValueJson"><source>src/app/learn/http/http.component.html:23</source> Rückgabewert kein JSON</msg>
+  <msg id="learnhttp:standardValue"><source>src/app/learn/http/http.component.html:24</source> Standardmäßig erwarten wir ein JSON als Rückgabe </msg>
+  <msg id="learnhttp:emptyrespnse"><source>src/app/learn/http/http.component.html:25</source> Erhalten wir kein JSON ODER GAR KEINEN WERT müssen wir den Typ manuell angeben mit: resonseType: &apos;text&apos; oder &apos;blob&apos;</msg>
+  <msg id="learnobservables:headline"><source>src/app/learn/observable/observable.component.html:1</source> Observables </msg>
+  <msg id="learnobservables:createFunctions"><source>src/app/learn/observable/observable.component.html:3</source> Create Functions</msg>
+  <msg id="learnobservables:createFunctionsFirst"><source>src/app/learn/observable/observable.component.html:4</source><ph name="START_BOLD_TEXT"/>of<ph name="CLOSE_BOLD_TEXT"/> erstellt ein Observable aus einzelnen Werten: const $obs = of(1,2,3) </msg>
+  <msg id="learnobservables:createFunctionFrom"><source>src/app/learn/observable/observable.component.html:5</source><ph name="START_BOLD_TEXT"/>from<ph name="CLOSE_BOLD_TEXT"/> erstellt eines aus einem array const $obs = from(myArray)</msg>
+  <msg id="learnobservables:createFunctionTimer"><source>src/app/learn/observable/observable.component.html:6</source><ph name="START_BOLD_TEXT"/>timer(500)<ph name="CLOSE_BOLD_TEXT"/> -&gt; erzeugt alle 500ms einen neuen Wert // ---1---2---3---4---5....</msg>
+  <msg id="learnobservables:createFunctionTimerSecond"><source>src/app/learn/observable/observable.component.html:7</source><ph name="START_BOLD_TEXT"/>timer(0,500)<ph name="CLOSE_BOLD_TEXT"/> -&gt; Startet bei 0ms und erzeugt den Wert und dann alle 500ms // 1---2---3---4---5...</msg>
+  <msg id="learnobservables:sharedOperator"><source>src/app/learn/observable/observable.component.html:11</source> Shared Operator </msg>
+  <msg id="learnobservables:sharedText"><source>src/app/learn/observable/observable.component.html:13,17</source> Wir haben vom Server einen Request ausgeführt und diesen mit Hilfe von Shared an 2 Subscriber vereteilt ohne mit den beiden Subscribern einen Request auszuführen </msg>
+  <msg id="learnobservables:subject"><source>src/app/learn/observable/observable.component.html:18</source> Subject </msg>
+  <msg id="learnobservables:subjectText"><source>src/app/learn/observable/observable.component.html:19,23</source> Ein Subject ist ein selbst erstelltes Observable, dass wir abbonieren können wenn sich die Daten im Subject ändern ändert sich auch die Werte der Variable, welcher das Abbonement zugewiesen wurde </msg>
+  <msg id="learnobservables:behaviourSubject"><source>src/app/learn/observable/observable.component.html:26</source> Behavior Subject</msg>
+  <msg id="learnobservables:behaviourSubjecttext"><source>src/app/learn/observable/observable.component.html:27</source>hat bereits einen Startwert</msg>
+  <msg id="learnservices:headline"><source>src/app/learn/services/services.component.html:0</source> Services </msg>
+  <msg id="learnservices:useprovidedin"><source>src/app/learn/services/services.component.html:2</source> providedIn</msg>
+  <msg id="learnservices:pone"><source>src/app/learn/services/services.component.html:3</source> Damit Angular erkennt ob ein Servcie benötigt wird oder nicht benutzen wir anstelle dem Providers Array das providedIn Tag</msg>
+  <msg id="learnservices:ptwo"><source>src/app/learn/services/services.component.html:4</source>Damit reduziert sich die Größe unseres Bundles, da nicht benötigte Services nicht berücksichtigt werden</msg>
+  <msg id="learnservices:pthree"><source>src/app/learn/services/services.component.html:5</source> root: eine Instanz des Service die geteilt wird</msg>
+  <msg id="learnservices:pfour"><source>src/app/learn/services/services.component.html:6</source> any: jedesmal wenn der Services in einer Component injected wird erhält dieser eine neue Instanz des Services </msg>
+  <msg id="learnts:headline"><source>src/app/learn/type-script/type-script.component.html:1</source> TypeScript </msg>
+  <msg id="learnts:subtitle"><source>src/app/learn/type-script/type-script.component.html:3</source> learnings des TypeScript Kaptiel </msg>
+  <msg id="learnts:unknown"><source>src/app/learn/type-script/type-script.component.html:7</source> unknown &amp; any</msg>
+  <msg id="learnts:unkowntext"><source>src/app/learn/type-script/type-script.component.html:8</source> Typ :unkown kann nur nach typen-prüfung einer anderen Variable zugewiesen werden</msg>
+  <msg id="learnts:methodtypes"><source>src/app/learn/type-script/type-script.component.html:14</source> Methodentypen</msg>
+  <msg id="learnts:methodtypestext"><source>src/app/learn/type-script/type-script.component.html:15</source> Stellen sicher das Methoden den gewünschten Typ returnen </msg>
+  <msg id="learnts:extends"><source>src/app/learn/type-script/type-script.component.html:21</source> Schlüsselwort: extends </msg>
+  <msg id="learnts:extendstext"><source>src/app/learn/type-script/type-script.component.html:22</source> Vererben von Eigenschaften und Methoden anderer Klassen </msg>
+  <msg id="learnts:lamda"><source>src/app/learn/type-script/type-script.component.html:28</source> Lamda-Ausdrücke </msg>
+  <msg id="learnts:lamdatext"><source>src/app/learn/type-script/type-script.component.html:29</source> wir können um Ergbnisse zu returnen auch die Arrow Schreibweise nutzen </msg>
+  <msg id="learnts:spread"><source>src/app/learn/type-script/type-script.component.html:38</source> Spread Operator </msg>
+  <msg id="learnts:spreadtext"><source>src/app/learn/type-script/type-script.component.html:39,43</source> mit dem spread Operator erstellen wir eine kopie eines Objektes &amp; übertragen alle Propertys des alten Objekts (ggf. können wir einzelne dann überschreiben) </msg>
+  <msg id="learnts:oldObject"><source>src/app/learn/type-script/type-script.component.html:44</source>Altes Objekt</msg>
+  <msg id="learnts:copyofObject"><source>src/app/learn/type-script/type-script.component.html:48</source>neues Objekt mit spread &amp; gändertem year</msg>
+  <msg id="learnts:uniontypes"><source>src/app/learn/type-script/type-script.component.html:54</source> 2 Typen angeben - Union Types </msg>
+  <msg id="learnts:variable"><source>src/app/learn/type-script/type-script.component.html:55</source> varaible : string | number = &apos;darf vom typ string oder number sein&apos; </msg>
+  <msg id="learnts:bindings"><source>src/app/learn/type-script/type-script.component.html:59</source> Property Bindings </msg>
+  <msg id="learnts:bindingone"><source>src/app/learn/type-script/type-script.component.html:60</source> reine Strings binden als attribut =&gt; src=&quot;https://bild.de&quot;</msg>
+  <msg id="learnts:bindingtwo"><source>src/app/learn/type-script/type-script.component.html:61</source> Variablen bzw. Außdrücke binden als Property =&gt; [src] = &quot;picUrl&quot;</msg>
+  <msg id="learnts:ngClass"><source>src/app/learn/type-script/type-script.component.html:65</source> ngClass &amp; ngStyle Syntax</msg>
+  <msg id="learnts:ngClasstwo"><source>src/app/learn/type-script/type-script.component.html:66</source> mit ngClass können wir MEHRERE KLASSEN in ABHÄNGKEIT von Variablenzuständen binden</msg>
+  <msg id="learnts:ngClassthree"><source>src/app/learn/type-script/type-script.component.html:67</source> siehe unten - die Varianle hasError ist false und die Variable isActive ist true</msg>
+  <msg id="learnts:dynamicclass"><source>src/app/learn/type-script/type-script.component.html:70</source> Klassen werden dynamisch gesezt je nach Variablenzustand von isActive und hasError</msg>
+  <msg id="learnts:buttonchangeclass"><source>src/app/learn/type-script/type-script.component.html:75</source> klassen tauschen</msg>
+  <msg id="learnts:ngstyle"><source>src/app/learn/type-script/type-script.component.html:79</source> mit ngSyle funktiniert dies genauso</msg>
+  <msg id="learnts:morestyles"><source>src/app/learn/type-script/type-script.component.html:81</source> mehrere Styles mit ngStyle </msg>
+  <msg id="learnts:changename"><source>src/app/learn/type-script/type-script.component.html:85</source> @Input Namensänderung </msg>
+  <msg id="learnts:outputs"><source>src/app/learn/type-script/type-script.component.html:86</source> @Input(&apos;oldName&apos;) newName : string;</msg>
+  <msg id="learnts:myowntype"><source>src/app/learn/type-script/type-script.component.html:90</source> Eigene Typen entwickeln</msg>
+  <msg id="learnts:onoff"><source>src/app/learn/type-script/type-script.component.html:92</source> type ourType = &apos;on&apos; | &apos;off&apos; </msg>
+  <msg id="learnts:onofftext"><source>src/app/learn/type-script/type-script.component.html:94</source> Der Typ ourType dürfte jetzt nur die Strings &apos;on&apos; oder &apos;of&apos; annehmen</msg>
+  <msg id="learnts:becarefulwithowntypes"><source>src/app/learn/type-script/type-script.component.html:96</source> Achtung: die Typen Definition erfolgt über dem @Component Decorator </msg>
+  <msg id="bookDetail:author"><source>src/app/books/book-detail/book-detail.component.html:7,9</source> Autoren</msg>
+  <msg id="bookDetail:isbn"><source>src/app/books/book-detail/book-detail.component.html:11,13</source> ISBN </msg>
+  <msg id="bookDetail:published"><source>src/app/books/book-detail/book-detail.component.html:15,17</source> Erschienen: </msg>
+  <msg id="bookDetail:rating"><source>src/app/books/book-detail/book-detail.component.html:19,22</source>Bewertung</msg>
+  <msg id="bookDetail:description"><source>src/app/books/book-detail/book-detail.component.html:32,35</source>Beschreibung</msg>
+  <msg id="bookDetail:Buttonback"><source>src/app/books/book-detail/book-detail.component.html:36,38</source> zurück </msg>
+  <msg id="bookDetail:ButtonEdit"><source>src/app/books/book-detail/book-detail.component.html:38,40</source>bearbeiten</msg>
+  <msg id="bookDetail:ButtonDelete"><source>src/app/books/book-detail/book-detail.component.html:39,44</source>Buch löschen</msg>
+  <msg id="bookDetail:loading"><source>src/app/books/book-detail/book-detail.component.html:49,53</source>Loading</msg>
+  <msg id="7494421066648407306"><source>src/app/books/book-detail/book-detail.component.ts:35</source>:@@BookDetail:deleteConfirm: Möchten Sie dieses Buch wirklich löschen?</msg>
+  <msg id="BookList:noBooksFound"><source>src/app/books/book-list/book-list.component.html:6,9</source> Es wurden keine Bücher gefunden</msg>
+  <msg id="BookList:loading"><source>src/app/books/book-list/book-list.component.html:13,16</source>Loading</msg>
+  <msg id="learnpipes:headline"><source>src/app/learn/pipes/pipes.component.html:1,3</source> Pipes &amp; Directives </msg>
+  <msg id="learnpipes:pipesHeadline"><source>src/app/learn/pipes/pipes.component.html:2,4</source> Pipes: </msg>
+  <msg id="learnpipes:datePipe"><source>src/app/learn/pipes/pipes.component.html:3,5</source> Date Pipes</msg>
+  <msg id="learnpipes:datePipeText"><source>src/app/learn/pipes/pipes.component.html:4,8</source>Normales Format eines Date Objekts</msg>
+  <msg id="learnpipes:tableName"><source>src/app/learn/pipes/pipes.component.html:10,12</source>Name</msg>
+  <msg id="learnpipes:tableResult"><source>src/app/learn/pipes/pipes.component.html:11,15</source>Ergebnis</msg>
+  <msg id="learnpipes:anothername"><source>src/app/learn/pipes/pipes.component.html:113,115</source>Name</msg>
+  <msg id="learnpipes:anotherresult"><source>src/app/learn/pipes/pipes.component.html:114,118</source>Ergebnis value= 3.14159 </msg>
+  <msg id="learnpipes:namesecond"><source>src/app/learn/pipes/pipes.component.html:149,151</source>Name</msg>
+  <msg id="learnpipes:namheadline"><source>src/app/learn/pipes/pipes.component.html:150,154</source>Ergebnis</msg>
+  <msg id="learnpipes:namethirdone"><source>src/app/learn/pipes/pipes.component.html:171,173</source> Geht Auch auf Arrays : [&apos;Ferdinant&apos;, &apos;Walter&apos;, &apos;Peter&apos;, &apos;Frank&apos;] | slice :0:2 </msg>
+  <msg id="learnpipes:keyValuePipe"><source>src/app/learn/pipes/pipes.component.html:179,181</source>KeyValuePipe | keyvalue </msg>
+  <msg id="learnpipes:keyValuePipetext"><source>src/app/learn/pipes/pipes.component.html:180,183</source> Ein Objekt in einen Array umwandeln Objekt: <ph name="INTERPOLATION"/></msg>
+  <msg id="learnpipes:jsonpipe"><source>src/app/learn/pipes/pipes.component.html:187,190</source> Json Pipe | json - Objekt sichbar machen! </msg>
+  <msg id="learnpipes:jsonpipetext"><source>src/app/learn/pipes/pipes.component.html:189,196</source> ohne | json book Objekt ausgeben</msg>
+  <msg id="learnpipes:widthJsond"><source>src/app/learn/pipes/pipes.component.html:196,202</source> mit | json </msg>
+  <msg id="learnpipes:asyncPipe"><source>src/app/learn/pipes/pipes.component.html:201,204</source> Async Pipe </msg>
+  <msg id="learnpipes:asyncpipeText"><source>src/app/learn/pipes/pipes.component.html:203,206</source>Unser BehaviorSubject hat erst den Wert &apos;hallo&apos; dann nach einer sekunde &apos;welt&apos; </msg>
+  <msg id="learnpipes:printValues"><source>src/app/learn/pipes/pipes.component.html:210,212</source> Best practice um Observable-Werte im Template auszueben</msg>
+  <msg id="learnpipes:asyncautomaticsubscibe"><source>src/app/learn/pipes/pipes.component.html:211,213</source> |async subscribed automatisch</msg>
+  <msg id="learnpipes:becareful"><source>src/app/learn/pipes/pipes.component.html:212,214</source> vorsicht bei http Ausgaben da bei jeder verwendung eine neuer Request ausgeführt wird</msg>
+  <msg id="learnpipes:bettershare"><source>src/app/learn/pipes/pipes.component.html:213,218</source> -&gt; besser mit share() oder shareReplay() nutzen und die Pipe auf den geteilten Observable ausführen, dass keinen Request macht </msg>
+  <msg id="learnpipes:myownpipe"><source>src/app/learn/pipes/pipes.component.html:217,220</source> Eigene Pipe erstellen </msg>
+  <msg id="learnpipes:multiplicationpipe"><source>src/app/learn/pipes/pipes.component.html:219,221</source>Unsere Pipe multipliziert den Satrtwert mit der eingegeben Zahl </msg>
+  <msg id="learnpipes:startvalue"><source>src/app/learn/pipes/pipes.component.html:220,224</source> Startwert: 5</msg>
+  <msg id="learnpipes:buttoncalculate"><source>src/app/learn/pipes/pipes.component.html:226,230</source> berechen </msg>
+</messagebundle>

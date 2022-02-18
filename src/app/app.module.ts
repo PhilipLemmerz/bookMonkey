@@ -1,4 +1,4 @@
-import { Inject, LOCALE_ID, NgModule } from '@angular/core';
+import {NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SuiModule } from 'ng2-semantic-ui';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,8 +8,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { TokenInterceptor } from './shared/token.interceptor';
-import { DatePipe, registerLocaleData } from '@angular/common';
-import localeDe from '@angular/common/locales/de';
+import { DatePipe} from '@angular/common';
+
 
 
 @NgModule({
@@ -28,8 +28,6 @@ import localeDe from '@angular/common/locales/de';
   ],
 
   providers: [
-    {provide: LOCALE_ID, useValue: 'de'},
-
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,  // Klassenname des Intercepor
@@ -40,10 +38,6 @@ import localeDe from '@angular/common/locales/de';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-  constructor(@Inject(LOCALE_ID) locale: string) {
-    registerLocaleData(localeDe)
-  }
-}
+export class AppModule {}
 
 

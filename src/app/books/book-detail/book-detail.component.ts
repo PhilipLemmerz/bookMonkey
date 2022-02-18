@@ -33,7 +33,7 @@ export class BookDetailComponent implements OnInit {
   }
 
   deleteBook() {
-    if (this.book$ && confirm('Möchten Sie dieses Buch wirklich löschen?')) {
+    if (this.book$ && confirm($localize`\:@@BookDetail\:deleteConfirm\: Möchten Sie dieses Buch wirklich löschen?`)) {
       this.bs.remove(this.isbn as string).subscribe(
         res => this.router.navigateByUrl('/bücher')
       );

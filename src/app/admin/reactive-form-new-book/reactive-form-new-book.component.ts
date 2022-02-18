@@ -131,13 +131,13 @@ export class ReactiveFormNewBookComponent implements OnInit, OnChanges {
 
   isbnError() {
     if (this.bookForm.get('isbn').errors?.required) {
-      return 'bite gebe eine 13-Stellige ISBN ein'
+      return $localize`:@@error:noisbn\: bite gebe eine 13-Stellige ISBN ein`
     } else if (this.bookForm.get('isbn').errors?.format) {
-      return 'die eingegebene ISBN hat das flasche Format'
+      return $localize`:@@error:isbnwrongFormat\: die eingegebene ISBN hat das flasche Format`
     } else if (this.bookForm.get('isbn').errors?.exists) {
-      return 'Die eingegebene Isbn existiert bereits'
+      return $localize`:@@error:isbnexists\: Die eingegebene Isbn existiert bereits`
     } else {
-      return 'es ist ein Fehler aufgetreten'
+      return $localize`:@@error:otherError\: es ist ein Fehler aufgetreten `
     }
   }
 

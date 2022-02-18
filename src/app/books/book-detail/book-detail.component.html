@@ -5,19 +5,19 @@
     <h4>{{book.subtitle}}</h4>
     <div class="basics">
       <div>
-        <h5> Autoren</h5>
+        <h5 i18n="@@bookDetail:author"> Autoren</h5>
         <p *ngFor="let author of book.authors"> {{author}}</p>
       </div>
       <div>
-        <h5> ISBN </h5>
+        <h5 i18n="@@bookDetail:isbn"> ISBN </h5>
         <p> {{book.isbn | isbn }}</p>
       </div>
       <div>
-        <h5> Erschienen: </h5>
+        <h5 i18n="@@bookDetail:published"> Erschienen: </h5>
         {{book.published | date: 'longDate'}}
       </div>
       <div>
-        <h5>Rating</h5>
+        <h5 i18n="@@bookDetail:rating">Bewertung</h5>
 
         <div *ngIf="book.rating">
           <ng-container *ngFor="let star of tranformRatingToArray(book.rating); index as i">
@@ -30,13 +30,14 @@
         </div>
       </div>
     </div>
-    <h4>Beschreibung</h4>
+    <h4 i18n="@@bookDetail:description">Beschreibung</h4>
     {{book.description}}
     <img class="ui image medium" *ngIf="book.thumbnails" [src]="book.thumbnails[0].url">
 
-    <button class="ui toggle button" routerLink="/bücher"> zurück </button>
-    <button class="ui orange button" routerLink="/admin/edit/{{book.isbn}}">bearbeiten</button>
-    <button class="ui inverted red button" (click)="deleteBook()">Buch löschen</button>
+    <button class="ui toggle button" routerLink="/bücher" i18n="@@bookDetail:Buttonback"> zurück </button>
+    <button class="ui orange button" routerLink="/admin/edit/{{book.isbn}}"
+      i18n="@@bookDetail:ButtonEdit">bearbeiten</button>
+    <button class="ui inverted red button" (click)="deleteBook()" i18n="@@bookDetail:ButtonDelete">Buch löschen</button>
 
   </section>
 
@@ -46,8 +47,7 @@
 <ng-template #loading>
   <div class="ui segment loadingAnimation">
     <div class="ui active inverted dimmer">
-      <div class="ui text loader">Loading</div>
+      <div class="ui text loader" i18n="@@bookDetail:loading">Loading</div>
     </div>
-    <p></p>
   </div>
 </ng-template>

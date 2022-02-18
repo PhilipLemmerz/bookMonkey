@@ -4,14 +4,14 @@
         </pl-book-list-item>
 
       <div *ngIf="books && books.length==0">
-        <h2> Es wurden keine Bücher gefunden</h2>
+        <h2 i18n="@@BookList:noBooksFound"> Es wurden keine Bücher gefunden</h2>
       </div>
   </ng-container>
 
   <ng-template #loading>
     <div class="ui segment loadingAnimation">
       <div class="ui active inverted dimmer">
-        <div class="ui text loader">Loading</div>
+        <div class="ui text loader"i18n="@@BookList:loading">Loading</div>
       </div>
     </div>
   </ng-template>

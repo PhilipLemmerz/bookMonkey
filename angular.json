@@ -6,7 +6,16 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "BookMonkey": {
+    "BookMonkey": {     
+      "i18n": {
+        "sourceLocale": "de",
+        "locales": {
+          "en": {
+            "translation": "src/messages.en.xtb", 
+            "baseHref": ""
+          }
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -67,8 +76,11 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            }
-          },
+            },
+          "en": {
+            "localize": ["en"]
+          }
+        },
           "defaultConfiguration": "production"
         },
         "serve": {
@@ -77,10 +89,13 @@
             "production": {
               "browserTarget": "BookMonkey:build:production"
             },
+            "en" : {
+              "browserTarget": "BookMonkey:build:en"
+            },
             "development": {
               "browserTarget": "BookMonkey:build:development"
             }
-          },
+          },         
           "defaultConfiguration": "development"
         },
         "extract-i18n": {

@@ -1,33 +1,33 @@
 <section>
-  <h1> TypeScript </h1>
+  <h1 i18n="@@learnts:headline"> TypeScript </h1>
 
-  <p> learnings des TypeScript Kaptiel </p>
+  <p i18n="@@learnts:subtitle"> learnings des TypeScript Kaptiel </p>
 
   <hr>
 
-  <h3> unknown & any</h3>
-  <p> Typ :unkown kann nur nach typen-prüfung einer anderen Variable zugewiesen werden</p>
+  <h3 i18n="@@learnts:unknown"> unknown & any</h3>
+  <p i18n="@@learnts:unkowntext"> Typ :unkown kann nur nach typen-prüfung einer anderen Variable zugewiesen werden</p>
 
   {{newOne}}
 
   <hr>
 
-  <h3> Methodentypen</h3>
-  <p> Stellen sicher das Methoden den gewünschten Typ returnen </p>
+  <h3 i18n="@@learnts:methodtypes"> Methodentypen</h3>
+  <p i18n="@@learnts:methodtypestext"> Stellen sicher das Methoden den gewünschten Typ returnen </p>
 
   {{returnOfFunction}}
 
   <hr>
 
-  <h3> Schlüsselwort: extends </h3>
-  <p> Vererben von Eigenschaften und Methoden anderer Klassen </p>
+  <h3 i18n="@@learnts:extends"> Schlüsselwort: extends </h3>
+  <p i18n="@@learnts:extendstext"> Vererben von Eigenschaften und Methoden anderer Klassen </p>
 
   {{name}}
 
   <hr>
 
-  <h3> Lamda-Ausdrücke </h3>
-  <p> wir können um Ergbnisse zu returnen auch die Arrow Schreibweise nutzen </p>
+  <h3 i18n="@@learnts:lamda"> Lamda-Ausdrücke </h3>
+  <p i18n="@@learnts:lamdatext"> wir können um Ergbnisse zu returnen auch die Arrow Schreibweise nutzen </p>
 
 
   {{lamdaReturn1}}
@@ -36,65 +36,65 @@
 
   <hr>
 
-  <h3> Spread Operator </h3>
-  <p>
+  <h3 i18n="@@learnts:spread"> Spread Operator </h3>
+  <p i18n="@@learnts:spreadtext">
     mit dem spread Operator erstellen wir eine kopie eines Objektes & übertragen alle Propertys des alten Objekts
     (ggf. können wir einzelne dann überschreiben)
   </p>
 
-  <h4>Altes Objekt</h4>
+  <h4 i18n="@@learnts:oldObject">Altes Objekt</h4>
   {{myObject.name}}
   {{myObject.year}}
 
-  <h4>neues Objekt mit spread & gändertem year</h4>
+  <h4 i18n="@@learnts:copyofObject">neues Objekt mit spread & gändertem year</h4>
   {{copy.name}}
   {{copy.year}}
 
   <hr>
 
-  <h4> 2 Typen angeben - Union Types </h4>
-  <p> varaible : string | number = 'darf vom typ string oder number sein' </p>
+  <h4 i18n="@@learnts:uniontypes"> 2 Typen angeben - Union Types </h4>
+  <p i18n="@@learnts:variable"> varaible : string | number = 'darf vom typ string oder number sein' </p>
 
   <hr>
 
-  <h4> Property Bindings </h4>
-  <p> reine Strings binden als attribut => src="https://bild.de"</p>
-  <p> Variablen bzw. Außdrücke binden als Property => [src] = "picUrl"</p>
+  <h4 i18n="@@learnts:bindings"> Property Bindings </h4>
+  <p i18n="@@learnts:bindingone" > reine Strings binden als attribut => src="https://bild.de"</p>
+  <p i18n="@@learnts:bindingtwo"> Variablen bzw. Außdrücke binden als Property => [src] = "picUrl"</p>
 
   <hr>
 
-  <h4> ngClass & ngStyle Syntax</h4>
-  <p> mit ngClass können wir MEHRERE KLASSEN in ABHÄNGKEIT von Variablenzuständen binden</p>
-  <p> siehe unten - die Varianle hasError ist false und die Variable isActive ist true</p>
+  <h4 i18n="@@learnts:ngClass"> ngClass & ngStyle Syntax</h4>
+  <p i18n="@@learnts:ngClasstwo"> mit ngClass können wir MEHRERE KLASSEN in ABHÄNGKEIT von Variablenzuständen binden</p>
+  <p i18n="@@learnts:ngClassthree"> siehe unten - die Varianle hasError ist false und die Variable isActive ist true</p>
 
   <div [ngClass]="{active: isActive, error : hasError}">
-    <p> Klassen werden dynamisch gesezt je nach Variablenzustand von isActive und hasError</p>
+    <p i18n="@@learnts:dynamicclass"> Klassen werden dynamisch gesezt je nach Variablenzustand von isActive und hasError</p>
   </div>
 
   <br>
 
-  <button (click)="this.isActive= !this.isActive; this.hasError = !this.hasError"> klassen tauschen</button>
+  <button (click)="this.isActive= !this.isActive; this.hasError = !this.hasError" i18n="@@learnts:buttonchangeclass"> klassen tauschen</button>
 
   <br><br>
 
-  <p> mit ngSyle funktiniert dies genauso</p>
+  <p i18n="@@learnts:ngstyle"> mit ngSyle funktiniert dies genauso</p>
 
-  <p [ngStyle] = "{color: myColor, border: '1px solid green' }">  mehrere Styles mit ngStyle  </p>
-
-  <hr>
-
-  <h4> @Input Namensänderung </h4>
-  <p> @Input('oldName') newName : string;</p>
+  <p [ngStyle] = "{color: myColor, border: '1px solid green' }" i18n="@@learnts:morestyles">  mehrere Styles mit ngStyle  </p>
 
   <hr>
 
-  <h4> Eigene Typen entwickeln</h4>
+  <h4 i18n="@@learnts:changename"> @Input Namensänderung </h4>
+  <p i18n="@@learnts:outputs"> @Input('oldName') newName : string;</p>
 
-  <p> type ourType = 'on' | 'off' </p>
+  <hr>
 
-  <p> Der Typ ourType dürfte jetzt nur die Strings 'on' oder 'of' annehmen</p>
+  <h4 i18n="@@learnts:myowntype"> Eigene Typen entwickeln</h4>
 
-  <p> Achtung: die Typen Definition erfolgt über dem @Component Decorator </p>
+  <p i18n="@@learnts:onoff"> type ourType = 'on' | 'off' </p>
+
+  <p i18n="@@learnts:onofftext"> Der Typ ourType dürfte jetzt nur die Strings 'on' oder 'of' annehmen</p>
+
+  <p i18n="@@learnts:becarefulwithowntypes"> Achtung: die Typen Definition erfolgt über dem @Component Decorator </p>
 
   <hr>
 

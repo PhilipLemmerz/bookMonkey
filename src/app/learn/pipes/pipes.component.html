@@ -1,15 +1,15 @@
 <section>
-  <h1> Pipes & Directives </h1>
-  <h2> Pipes: </h2>
-  <h4> Date Pipes</h4>
-  <p>Normales Format eines Date Objekts</p>
+  <h1 i18n="@@learnpipes:headline"> Pipes & Directives </h1>
+  <h2 i18n="@@learnpipes:pipesHeadline"> Pipes: </h2>
+  <h4 i18n="@@learnpipes:datePipe"> Date Pipes</h4>
+  <p i18n="@@learnpipes:datePipeText">Normales Format eines Date Objekts</p>
   {{date}}
 
   <table class="ui celled table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Ergebnis</th>
+        <th i18n="@@learnpipes:tableName">Name</th>
+        <th i18n="@@learnpipes:tableResult">Ergebnis</th>
       </tr>
     </thead>
     <tbody>
@@ -111,8 +111,8 @@
   <table class="ui celled table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Ergebnis value= 3.14159 </th>
+        <th i18n="@@learnpipes:anothername">Name</th>
+        <th i18n="@@learnpipes:anotherresult">Ergebnis value= 3.14159 </th>
       </tr>
     </thead>
     <tbody>
@@ -147,8 +147,8 @@
   <table class="ui celled table">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Ergebnis</th>
+        <th i18n="@@learnpipes:namesecond">Name</th>
+        <th i18n="@@learnpipes:namheadline">Ergebnis</th>
       </tr>
     </thead>
     <tbody>
@@ -169,7 +169,7 @@
         <td data-label="Age">{{'HalloWelt'| slice: -100}}</td>
       </tr>
       <tr>
-        <td data-label="Name"> Geht Auch auf Arrays : ['Ferdinant', 'Walter', 'Peter', 'Frank'] | slice :0:2 </td>
+        <td data-label="Name" i18n="@@learnpipes:namethirdone"> Geht Auch auf Arrays : ['Ferdinant', 'Walter', 'Peter', 'Frank'] | slice :0:2 </td>
         <td data-label="Age">{{['Ferdinant', 'Walter', 'Peter', 'Frank'] | slice: 0:2}}</td>
       </tr>
     </tbody>
@@ -177,54 +177,54 @@
 
   <hr>
 
-  <h4>KeyValuePipe | keyvalue </h4>
-  <p> Ein Objekt in einen Array umwandeln Objekt: {{book | json }}</p>
+  <h4 i18n="@@learnpipes:keyValuePipe">KeyValuePipe | keyvalue </h4>
+  <p i18n="@@learnpipes:keyValuePipetext"> Ein Objekt in einen Array umwandeln Objekt: {{book | json }}</p>
 
   <p *ngFor="let obj of book | keyvalue">  {{obj.key}}:  {{obj.value}} </p>
 
 
   <hr>
 
-  <h4> Json Pipe | json - Objekt sichbar machen! </h4>
+  <h4 i18n="@@learnpipes:jsonpipe"> Json Pipe | json - Objekt sichbar machen! </h4>
 
-  <p> ohne | json book Objekt ausgeben</p>
+  <p i18n="@@learnpipes:jsonpipetext"> ohne | json book Objekt ausgeben</p>
 
   {{book}}
 
   <br>
   <br>
 
-  <p> mit | json </p>
+  <p i18n="@@learnpipes:widthJsond" > mit | json </p>
 
   {{book | json}}
 
 
-  <h4> Async Pipe </h4>
+  <h4 i18n="@@learnpipes:asyncPipe"> Async Pipe </h4>
 
-  <p>Unser BehaviorSubject hat erst den Wert 'hallo' dann nach einer sekunde 'welt' </p>
+  <p i18n="@@learnpipes:asyncpipeText">Unser BehaviorSubject hat erst den Wert 'hallo' dann nach einer sekunde 'welt' </p>
 
   {{myBehaviorSubject$ | async}}
 
   <br>
   <br>
 
-  <p> Best practice um Observable-Werte im Template auszueben</p>
-  <p> |async subscribed automatisch</p>
-  <p> vorsicht bei http Ausgaben da bei jeder verwendung eine neuer Request ausgeführt wird</p>
-  <p> -> besser mit share() oder shareReplay() nutzen und die Pipe auf den geteilten Observable ausführen, dass keinen Request macht </p>
+  <p i18n="@@learnpipes:printValues"> Best practice um Observable-Werte im Template auszueben</p>
+  <p i18n="@@learnpipes:asyncautomaticsubscibe"> |async subscribed automatisch</p>
+  <p i18n="@@learnpipes:becareful"> vorsicht bei http Ausgaben da bei jeder verwendung eine neuer Request ausgeführt wird</p>
+  <p i18n="@@learnpipes:bettershare"> -> besser mit share() oder shareReplay() nutzen und die Pipe auf den geteilten Observable ausführen, dass keinen Request macht </p>
 
   <hr>
 
-  <h2> Eigene Pipe erstellen </h2>
+  <h2 i18n="@@learnpipes:myownpipe"> Eigene Pipe erstellen </h2>
 
-  <p>Unsere Pipe multipliziert den Satrtwert mit der eingegeben Zahl </p>
-  <p> Startwert: 5</p>
+  <p i18n="@@learnpipes:multiplicationpipe">Unsere Pipe multipliziert den Satrtwert mit der eingegeben Zahl </p>
+  <p i18n="@@learnpipes:startvalue"> Startwert: 5</p>
 
   <form>
     <div class="ui input">
       <input type="number" #numberInput value="0">
     </div>
-    <button class=" ui button primary" (click)="setMultiplicator(numberInput.value)"> berechen </button>
+    <button class=" ui button primary" (click)="setMultiplicator(numberInput.value)" i18n="@@learnpipes:buttoncalculate"> berechen </button>
   </form>
 
   <p *ngIf="multiplicator"> {{5 | multiplication: multiplicator}}</p>

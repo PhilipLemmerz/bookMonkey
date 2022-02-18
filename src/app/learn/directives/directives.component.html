@@ -1,36 +1,36 @@
 <section>
-  <h1> Direktiven </h1>
-  <h4> andere Bindings in Directive holen </h4>
-  <p plOurDirective text="textFromComponent"> Auf diesem p-Element sitzt unser Directive und greift auf eine Variable
+  <h1 i18n="@@learnDirectives:headline"> Direktiven </h1>
+  <h4 i18n="@@learnDirectives:subtitle"> andere Bindings in Directive holen </h4>
+  <p plOurDirective text="textFromComponent"i18n="@@learnDirectives:firstp"> Auf diesem p-Element sitzt unser Directive und greift auf eine Variable
     aus der component zu </p>
 
   <hr>
 
-  <h4> @HostBinding </h4>
-  <p> Propertys z.B Klassen auf dem Host-Element setzen </p>
+  <h4 i18n="@@learnDirectives:hostbindingtitle"> @HostBinding </h4>
+  <p i18n="@@learnDirectives:hostbindingdescription"> Propertys z.B Klassen auf dem Host-Element setzen </p>
 
-  <p plOurDirective> Sobald Klasse active über @HostBinding gesetzt wurde wird der Text rot </p>
+  <p plOurDirective i18n="@@learnDirectives:hostbindingtest"> Sobald Klasse active über @HostBinding gesetzt wurde wird der Text rot </p>
 
-  <h4> Element Ref </h4>
-  <p> natitv und direkt DOM-Elemente verändern </p>
+  <h4 i18n="@@learnDirectives:elementreftitle"> Element Ref </h4>
+  <p i18n="@@learnDirectives:elementrefparagraph"> natitv und direkt DOM-Elemente verändern </p>
 
-  <p plOurDirective> directive macht den Text nach 3 Sekunden grün durch ElementRef </p>
+  <p plOurDirective i18n="@@learnDirectives:directivegreen"> directive macht den Text nach 3 Sekunden grün durch ElementRef </p>
 
   <hr>
 
-  <h4> @HostListener </h4>
-  <p> Immer wenn auf dem Host Element ein Event passiert z.B. Klick dann führt die direktive die hinterlegte Funktion
+  <h4 i18n="@@learnDirectives:hostlistener"> @HostListener </h4>
+  <p i18n="@@learnDirectives:hostlistenerparagraph"> Immer wenn auf dem Host Element ein Event passiert z.B. Klick dann führt die direktive die hinterlegte Funktion
     aus</p>
 
-  <p> Bei Klick auf den Button wird die Schrift des Buttons blau und Hintergrund gelb -> style Setzung erfolgt in der
+  <p i18n="@@learnDirectives:hostlistenersecondparagraph"> Bei Klick auf den Button wird die Schrift des Buttons blau und Hintergrund gelb -> style Setzung erfolgt in der
     Directive für das HostElement </p>
 
-  <button class="ui button primary" plOurDirective> klick mich </button>
+  <button class="ui button primary" plOurDirective i18n="@@learnDirectives:buttonone"> klick mich </button>
 
   <hr>
 
-  <h4> Komplexes Direktiven Beispiel </h4>
-  <p> Wenn wir mit der Maus über das Viereck fahren, wir es grün</p>
+  <h4 i18n="@@learnDirectives:complexdirective"> Komplexes Direktiven Beispiel </h4>
+  <p i18n="@@learnDirectives:complexdirectivedescription"> Wenn wir mit der Maus über das Viereck fahren, wir es grün</p>
 
   <div class="quadrat" plTurntogreen>
 
