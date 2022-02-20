@@ -1,25 +1,18 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TypeScriptComponent } from './type-script.component';
+describe('ourTestComponent', ()=> {
+  let oneVariable = 'helloWorld';
+  beforeEach(()=> {
+      // ... module erstellen
+      // ... variable auf null setzen
+  })
+  //erste Spezifikation
+  it('we should have a variable', () => {
+    expect(oneVariable).toBe('helloWorld');
+  })
+  // zweite Spezifikation
+  it('another Test', () => {
+  })
+})
 
-describe('TypeScriptComponent', () => {
-  let component: TypeScriptComponent;
-  let fixture: ComponentFixture<TypeScriptComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ TypeScriptComponent ]
-    })
-    .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TypeScriptComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});

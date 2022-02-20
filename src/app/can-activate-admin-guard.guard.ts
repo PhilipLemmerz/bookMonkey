@@ -14,7 +14,8 @@ export class CanActivateAdminGuardGuard implements CanActivate {
     state: RouterStateSnapshot): boolean | UrlTree {
 
     if (!this.messageShown) {
-      if (confirm($localize`:@@guardCanActivate:Atention\:Achtung: Sensibler Bereich - Bitte erstelle und bearbeite Bücher gewissenhaft`)) {
+      if (confirm($localize`:@@guardCanActivate\:Achtung: Sensibler Bereich
+       - Bitte erstelle und bearbeite Bücher gewissenhaft`)) {
         this.messageShown = true;
         return true
       } else {

@@ -11,6 +11,10 @@ import { MultiplicatePipe } from './pipes/multiplication.pipe';
 import { PipesComponent } from './pipes/pipes.component';
 import { ServicesComponent } from './services/services.component';
 import { TypeScriptComponent } from './type-script/type-script.component';
+import { TestingComponent } from './testing/testing.component';
+import { ChildComponent } from './testing/child/child.component';
+import { WidthDepandanciesComponent } from './testing/width-depandancies/width-depandancies.component';
+import { RoutingTestComponent } from './testing/routing-test/routing-test.component';
 
 
 @NgModule({
@@ -25,6 +29,10 @@ import { TypeScriptComponent } from './type-script/type-script.component';
     MultiplicatePipe,
     ServicesComponent,
     TypeScriptComponent,
+    TestingComponent,
+    ChildComponent,
+    WidthDepandanciesComponent,
+    RoutingTestComponent,
   ],
   imports: [
     LearnRoutingModule,

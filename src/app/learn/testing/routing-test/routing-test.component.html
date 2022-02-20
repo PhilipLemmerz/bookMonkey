@@ -1,0 +1,4 @@
+<h1> Routing-Test </h1>
+
+<pl-child id="child{{i}}" *ngFor="let b of books$ | async; let i as index" [book]="b" (click)="showDetail(b.isbn)">
+</pl-child>

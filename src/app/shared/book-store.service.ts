@@ -54,5 +54,9 @@ export class BookStoreService {
   checkIsbn(isbn: String) {
     return this.http.get(`${this.api}/book/${isbn}/check`)
   }
+
+  getAllForTesting(): Observable<Book[]> {
+    return this.http.get<any[]>(`${this.api}/books`);
+  }
 }
 

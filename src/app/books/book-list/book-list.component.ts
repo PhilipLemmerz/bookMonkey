@@ -4,7 +4,6 @@ import { Book } from 'src/app/shared/book';
 import { BookStoreService } from 'src/app/shared/book-store.service';
 
 
-
 @Component({
   selector: 'pl-book-list',
   templateUrl: './book-list.component.html',

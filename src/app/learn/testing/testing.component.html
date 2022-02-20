@@ -1,0 +1,19 @@
+<h1> Diese Component nutzen wir für das üben von Tests</h1>
+
+<h4> Unit Tests und Shallow-Unit Test</h4>
+
+<p> Es wird getestet ob das klicken das Event Emitten funktioniert</p>
+
+<button id="btn" (click)="emitIt(book[0])"> Event-Emitten </button>
+
+
+<hr>
+
+
+<h4> Integrationstest </h4>
+<p> Für diesen Test benötigen wir mehrere Componenten</p>
+
+<pl-child *ngFor="let b of book" [book]="b" (click)="doIt(book)"> </pl-child>
+
+
+
